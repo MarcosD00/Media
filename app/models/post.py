@@ -33,9 +33,9 @@ class Post(db.Model):
             'owner_id': self.owner_id,
             'title': self.title,
             'story': self.story,
-            'photo': self.story,
+            'photo': self.photo,
             'created_at': self.created_at,
             'updated_at': self.updated_at,
-            # 'User_firstName': self.post_user.first_name,
-            # 'User_lastName': self.post_user.last_name
+            'User_firstName': self.post_user.first_name,
+            'User_lastName': self.post_user.last_name
         }

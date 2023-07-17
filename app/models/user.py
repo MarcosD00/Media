@@ -13,8 +13,8 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
-    # first_name = db.Column(db.String(50), nullable=False)
-    # last_name = db.Column(db.String(50), nullable=False)
+    first_name = db.Column(db.String(50), nullable=False)
+    last_name = db.Column(db.String(50), nullable=False)
     user_post = db.relationship('Post', back_populates='post_user')
     user_comment = db.relationship('Comment', back_populates='comment_user')
 

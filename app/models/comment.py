@@ -38,8 +38,4 @@ class Comment(db.Model):
             'created_at': self.created_at,
             'updated_at': self.updated_at,
             'User_id': self.comment_user.id,
-            # "User_firstName": self.comment_user.first_name,
-            # 'User_lastName': self.comment_user.last_name,
-            # "Post_post": self.comment_post.post,
-            # "Post_ownerId": self.comment_post.owner_id
         }
