@@ -1,0 +1,85 @@
+.main-post-page{
+    display: flex;
+    justify-content: center;
+    
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.single-container{
+    max-width: 680px;
+
+    padding-bottom: 25px;
+
+    border-bottom: solid 1px rgb(242,242,242) ;
+}
+
+.single-container-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 680px;
+
+    margin-top: 25px;
+    padding-bottom: 25px;
+}
+
+.single-clap-comment-container{
+    display: flex;
+
+    margin: 15px auto;
+
+    border-bottom: solid 1px rgb(242,242,242) ;
+}
+
+.clap-comment{
+    font-size: 20px;
+}
+
+.single-clap-comment{
+    margin: auto 5px;
+    margin-bottom: 15px;
+
+    color: rgb(117,117,117)
+}
+
+.post-profile-pic{
+    max-width: 24px;
+    max-height: 24px;
+}
+
+.post-story-img{
+    display: block;
+
+    max-width: 112px;
+    max-height: 112px;
+}
+
+.display-info-container{
+    display: flex;
+}
+
+.story-title-and-description{
+    max-width: 500px;
+    margin-right: 35px;
+}
+
+.post-user-container{
+    display: flex;
+    align-items: center;
+}
+
+.post-user-name{
+    margin-left: 10px;
+}
+
+.post-sotry{
+margin-top: 50px;
+
+    line-height: 32px;
+    font-size: 20px;
+}
+
+.inside-container-clap-comment{
+    display: flex;
+}

@@ -3,6 +3,9 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
+import SingleUserPost from "./components/Post/singlePost"
+import CreatePost from "./components/createPost";
+import PostComponent from "./components/Post";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -23,6 +26,15 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route exact path="/">
+            <PostComponent />
+          </ Route>
+          <Route path="/new-post">
+            <CreatePost />
+          </Route>
+          <Route path="/post/:postId">
+            <SingleUserPost />
           </Route>
         </Switch>
       )}
