@@ -53,7 +53,6 @@ export const addPost = (post) => async dispatch => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(post)
     });
-    console.log(post)
     if (res.ok) {
         const data = await res.json();
         dispatch(addNewPost(data));

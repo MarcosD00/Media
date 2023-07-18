@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import SignupFormPage from "./components/SignupFormPage";
-import LoginFormPage from "./components/LoginFormPage";
+import AuthPage from "./components/AuthPage";
+import CreatePost from "./components/CreatePost";
 import SingleUserPost from "./components/Post/singlePost"
-import CreatePost from "./components/createPost";
 import PostComponent from "./components/Post";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
@@ -17,15 +16,12 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <div>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route path="/login" >
-            <LoginFormPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
+            <AuthPage />
           </Route>
           <Route exact path="/">
             <PostComponent />
@@ -33,12 +29,12 @@ function App() {
           <Route path="/new-post">
             <CreatePost />
           </Route>
-          <Route path="/post/:postId">
+          <Route exact path="/post/:postId">
             <SingleUserPost />
           </Route>
         </Switch>
       )}
-    </>
+    </div>
   );
 }
 

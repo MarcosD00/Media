@@ -31,7 +31,6 @@ def newPost():
     """
     adds new posts
     """
-
     form = PostForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     data = form.data
@@ -57,8 +56,15 @@ def updatePost(id):
     post = Post.query.filter(Post.id == id).first()
     if request.method == 'POST':
         data = request.get_json()
+
+        new_photo_text = data.get('photo')
         new_post_text = data.get('story')
+        new_title_text = data.get('title')
+
+        post.photo = new_photo_text
+        post.title = new_title_text
         post.story = new_post_text
+
         db.session.commit()
         return post.to_dict()
 

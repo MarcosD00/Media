@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, NavLink, Redirect } from 'react-router-dom';
 import { singlePost } from "../../store/posts";
+import OpenModalButton from "../OpenModalButton";
+import DeletePost from "../DeletePost"
+import UpdatePost from "../UpdatePost"
 import "./post.css"
 
 const SingleUserPost = () => {
@@ -14,9 +17,12 @@ const SingleUserPost = () => {
     }, [dispatch, postId])
 
     const us = useSelector(state => state.session.user)
+    let user;
+    if (us) {
+        user = us.id
+    }
 
     const sessionUser = useSelector((state) => state.session.user);
-    console.log(post)
     if (!sessionUser) return <Redirect to="/login" />;
 
     return (
@@ -31,19 +37,29 @@ const SingleUserPost = () => {
                     <p>{post.created_at}</p>
                 </div>
                 <div className="single-clap-comment-container">
-                    <i class="single-clap-comment clap-comment fa-solid fa-hands-clapping" />
-                    <p class="single-clap-comment">64</p>
-                    <i class="single-clap-comment clap-comment fa-regular fa-comment" />
-                    <p class="single-clap-comment">108</p>
+                    <i className="single-clap-comment clap-comment fa-solid fa-hands-clapping" />
+                    <p className="single-clap-comment">64</p>
+                    <i className="single-clap-comment clap-comment fa-regular fa-comment" />
+                    <p className="single-clap-comment">108</p>
                 </div>
                 <div className="single-container-body">
                     <img className="single-container-photo" src={post.photo }/>
                     <p className="post-sotry">{post.story}</p>
                     <div className="inside-container-clap-comment">
-                        <i class="single-clap-comment clap-comment fa-solid fa-hands-clapping" />
-                        <p class="single-clap-comment">64</p>
-                        <i class="single-clap-comment clap-comment fa-regular fa-comment" />
-                        <p class="single-clap-comment">108</p>
+                        <i className="single-clap-comment clap-comment fa-solid fa-hands-clapping" />
+                        <p className="single-clap-comment">64</p>
+                        <i className="single-clap-comment clap-comment fa-regular fa-comment" />
+                        <p className="single-clap-comment">108</p>
+                        {user && post.owner_id === user && <OpenModalButton
+                                buttonText="Edit"
+                                className="all-update-btn delete-update-btn"
+                                modalComponent={<UpdatePost id={post.id} />}
+                            />}
+                        {user && post.owner_id === user && <OpenModalButton
+                                buttonText="Delete"
+                                className="all-delete-btn delete-update-btn"
+                                modalComponent={<DeletePost id={post.id}><Redirect to="/"/></DeletePost>}
+                            />}
                     </div>
                 </div>
             </div>
