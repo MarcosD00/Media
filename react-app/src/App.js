@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import AuthPage from "./components/AuthPage";
-import CreatePost from "./components/CreatePost";
+import CreatePost from "./components/createPost";
 import SingleUserPost from "./components/Post/singlePost"
 import PostComponent from "./components/Post";
 import { authenticate } from "./store/session";
