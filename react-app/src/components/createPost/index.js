@@ -5,7 +5,6 @@ import "./createPost.css";
 
 import { addPost } from "../../store/posts";
 
-
 function CreatePost() {
     const dispatch = useDispatch();
 
@@ -18,7 +17,9 @@ function CreatePost() {
     const user_id = useSelector(state => state.session.user.id);
 
     const err = {}
+    
     if (story.length < 3000) err['story'] = "your story is too short";
+
     let newPost = {}
     if (!Object.values(err).length) {
         newPost = {
@@ -56,42 +57,46 @@ function CreatePost() {
         if (Object.values(newPost).length && run === 'yes') {
             const refun = async () => {
                 const res = await dispatch(addPost(newPost))
-                // history.push('/')
+                history.push('/')
             }
             refun();
         }
     }, [run])
 
     return (
-        <>
-        {validationErrors.question && <p className="errorsQuestion">{validationErrors.question}</p>}
+        <div className="main-create-page">
+        {validationErrors.post && <p className="errorsQuestion">{validationErrors.post}</p>}
 
             <form onSubmit={onSubmit} className="createForm">
-                    <textarea 
-                        value={photo} 
-                        onChange={updatePhoto} 
-                        placeholder="Submit a photo here" 
-                        className="textArea" 
-                    />
-                    <textarea
-                        type="text"
-                        value={title}
-                        onChange={updateTitle}
-                        placeholder="Add a title"                    
-                    />
-                     <textarea 
-                        value={story} 
-                        onChange={updateStory} 
-                        placeholder="Write your story here" 
-                        className="textArea" 
-                    />
-                    <button type="submit" className="addQuestion">Add Question</button>
-                    <button onClick={submitNo} type="delNo">Cancel</button>
+                    <div className="form-submit-btns">
+                        <button type="submit" className="publish-btn">Publish</button>
+                        <button onClick={submitNo} type="delNo">Cancel</button>
+                    </div>
+                    <div className="form-text-areas">
+                        <textarea 
+                            value={photo} 
+                            onChange={updatePhoto} 
+                            placeholder="Submit a photo here" 
+                            className="simple-style photo-text-submit" 
+                        />
+                        <textarea
+                            type="text"
+                            value={title}
+                            onChange={updateTitle}
+                            placeholder="Title"   
+                            className="simple-style title-text-submit"                 
+                            />
+                        <textarea 
+                            value={story} 
+                            onChange={updateStory} 
+                            placeholder="Tell your story..." 
+                            className="simple-style story-text-submit" 
+                        />
+                    </div>
+
             </form>
-        </>
+        </div>
     )
-
-
 }
 
 export default CreatePost;

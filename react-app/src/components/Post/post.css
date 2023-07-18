@@ -2,7 +2,9 @@
     display: flex;
     justify-content: center;
     
-    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+    margin-top: 100px;
+
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .single-container{
@@ -40,7 +42,7 @@
     margin: auto 5px;
     margin-bottom: 15px;
 
-    color: rgb(117,117,117)
+    color: rgb(117,117,117);
 }
 
 .post-profile-pic{
@@ -64,6 +66,10 @@
     margin-right: 35px;
 }
 
+.story-title{
+    color: black;
+}
+
 .post-user-container{
     display: flex;
     align-items: center;
@@ -71,6 +77,7 @@
 
 .post-user-name{
     margin-left: 10px;
+    color: black;
 }
 
 .post-sotry{
@@ -82,4 +89,12 @@ margin-top: 50px;
 
 .inside-container-clap-comment{
     display: flex;
+}
+
+.single-post{
+    text-decoration: none;
+}
+
+.test {
+    color: rgb(117,117,117);
 }

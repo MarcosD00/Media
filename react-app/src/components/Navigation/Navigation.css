@@ -5,3 +5,68 @@
 .hidden {
   display: none;
 }
+
+.nav-bar {
+  /* margin: 15px auto; */
+  padding-bottom: 30px;
+
+  border-bottom: solid 1px rgb(242,242,242) ;
+
+  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.nav-write-profile-btn{
+  float: right;
+  display: inline;
+
+  margin: auto 20px;
+}
+
+.home-img-btn{
+  text-decoration: none;
+}
+
+.new-post-btn{
+  margin-right: 25px;
+  /* margin-bottom: 5px; */
+
+  text-decoration: none;
+
+  color: rgb(107,107,107);
+}
+
+.new-post-btn:hover {
+  color: rgb(90, 90, 90);
+}
+
+.create-new-icon {
+  font-size: 20px;
+}
+
+.nav-profile-photo-btn{
+  margin-top: 2px;
+  max-width: 25px;
+}
+
+.profile-dropdown{
+  position: absolute;
+  right: 0%;
+  top: 62px;
+
+  margin: 0;
+
+  width: 100px;
+  height: 70px;
+  z-index: 2;
+
+  border-radius: 5px 5% / 0 0 5px 5px;
+  border: 2px solid rgb(225, 225, 225);
+  border-top: 0;
+
+  background-color: white;
+}
+
+.nav-profile-btn{
+  border: none;
+  background-color: white;
+}
