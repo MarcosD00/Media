@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     dispatch(authenticate()).then(() => setIsLoaded(true));
   }, [dispatch]);
-
+  //some comment to push to git
   return (
     <div>
       <Navigation isLoaded={isLoaded} />
