@@ -1,0 +1,100 @@
+.main-post-page{
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 100px;
+
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.single-container{
+    max-width: 680px;
+
+    padding-bottom: 25px;
+
+    border-bottom: solid 1px rgb(242,242,242) ;
+}
+
+.single-container-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 680px;
+
+    margin-top: 25px;
+    padding-bottom: 25px;
+}
+
+.single-clap-comment-container{
+    display: flex;
+
+    margin: 15px auto;
+
+    border-bottom: solid 1px rgb(242,242,242) ;
+}
+
+.clap-comment{
+    font-size: 20px;
+}
+
+.single-clap-comment{
+    margin: auto 5px;
+    margin-bottom: 15px;
+
+    color: rgb(117,117,117);
+}
+
+.post-profile-pic{
+    max-width: 24px;
+    max-height: 24px;
+}
+
+.post-story-img{
+    display: block;
+
+    max-width: 112px;
+    max-height: 112px;
+}
+
+.display-info-container{
+    display: flex;
+}
+
+.story-title-and-description{
+    max-width: 500px;
+    margin-right: 35px;
+}
+
+.story-title{
+    color: black;
+}
+
+.post-user-container{
+    display: flex;
+    align-items: center;
+}
+
+.post-user-name{
+    margin-left: 10px;
+    color: black;
+}
+
+.post-sotry{
+margin-top: 50px;
+
+    line-height: 32px;
+    font-size: 20px;
+}
+
+.inside-container-clap-comment{
+    display: flex;
+}
+
+.single-post{
+    text-decoration: none;
+}
+
+.test {
+    color: rgb(117,117,117);
+}

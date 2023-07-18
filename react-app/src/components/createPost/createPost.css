@@ -1,0 +1,58 @@
+.main-create-page{
+    display: flex;
+    justify-content: center;
+}
+
+.form-text-areas{
+    display: flex;
+    flex-direction: column;
+    /* width: 700px;
+    margin: 5px; */
+}
+
+.simple-style{
+    width: 700px;
+
+    margin: 5px;
+
+    border: none;
+}
+
+.photo-text-submit{
+    margin-top: 20px;
+}
+
+.story-text-submit{
+    height: 1000px;
+
+    font-size: 18px;
+}
+
+.title-text-submit{
+    height: 400px;
+
+    font-size: 50px;
+    font-weight: 100;
+    font-family: medium-content-title-font,Georgia,Cambria,"Times New Roman",Times,serif;
+}
+
+::-webkit-input-placeholder{
+    color: #b3b3b1;
+}
+
+.form-submit-btns{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.publish-btn{
+    padding: 7px 15px;
+    margin: auto 10px;
+
+    border: none;
+    border-radius: 15px;
+
+    color: white;
+    background-color: #1a8917;
+}
