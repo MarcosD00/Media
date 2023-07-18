@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import "./createPost.css";
 
 import { addPost } from "../../store/posts";
-
+  //some comment to push to git
 function CreatePost() {
     const dispatch = useDispatch();
 
