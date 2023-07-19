@@ -5,8 +5,9 @@ import AuthPage from "./components/AuthPage";
 import CreatePost from "./components/createPost";
 import SingleUserPost from "./components/Post/singlePost"
 import PostComponent from "./components/Post";
-import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
+// import AllComments from "./components/Comment"
+import { authenticate } from "./store/session";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,17 +20,20 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/login" >
+          <Route exact path="/login" >
             <AuthPage />
           </Route>
           <Route exact path="/">
             <PostComponent />
           </ Route>
-          <Route path="/new-post">
+          <Route exact path="/new-post">
             <CreatePost />
           </Route>
           <Route exact path="/post/:postId">
             <SingleUserPost />
+          </Route>
+          <Route exact path="">
+            {/* <AllComments /> */}
           </Route>
         </Switch>
       )}

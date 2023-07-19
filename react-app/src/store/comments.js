@@ -135,8 +135,8 @@ export default function commentReducer(state = initialState, action) {
             return { ...state, [action.payload.id]: action.payload };
 
         case DELETE_COMMENTS:
-            const state1 = { ...state.newState }
-            delete state1[action.payload]
+            const stateN = { ...state.newState }
+            delete stateN[action.payload]
             return { ...state }
 
 
