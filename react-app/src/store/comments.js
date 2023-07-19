@@ -36,7 +36,7 @@ const deleteComment = payload => ({
 })
 
 export const fetchLoadComments = () => async dispatch => {
-    const response = await fetch(`/api/comment`);
+    const response = await fetch(`/api/comment/`);
     if (response.ok) {
         const payload = await response.json();
         dispatch(loadComment(payload));

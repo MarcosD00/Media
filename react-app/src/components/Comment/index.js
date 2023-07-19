@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useHistory } from "react-router-dom";
-import { loadComment } from '../../../store/comments';
-import { loadPost } from '../../../store/posts';
-// import OpenModalButton from "../../OpenModalButton";
+import { fetchLoadComments } from '../../store/comments';
+import { allPosts } from '../../store/posts';
+import OpenModalButton from "../OpenModalButton";
 import './comment.css';
 
 function AllComments() {
@@ -20,9 +20,9 @@ function AllComments() {
 
     let postId = useParams().postId;
 
-    console.log(postId)
-    const comment = useSelector(state => state.comments ? state.comments.tempState : null);
+    const comment = useSelector(state => state.comments);
     const post = useSelector(state => state.posts ? state.posts[postId] : null)
+    console.log(comment)
 
 
 
@@ -33,11 +33,11 @@ function AllComments() {
     }
 
     useEffect(() => {
-        dispatch(loadComment(postId));
+        dispatch(fetchLoadComments(postId));
     }, [dispatch, postId]);
 
     useEffect(() => {
-        dispatch(loadPost())
+        dispatch(allPosts())
     }, [dispatch]);
 
     if (!comment) return null;

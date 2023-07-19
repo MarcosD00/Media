@@ -4,12 +4,12 @@ from app.models import db, Comment
 from app.forms.form import CommentForm
 from flask_login import login_required, current_user
 
-comment_route = Blueprint('comment', __name__)
+comment_routes = Blueprint('comment', __name__)
 
 # GET ALL COMMENTS
 
 
-@comment_route.route('/', methods=["GET"])
+@comment_routes.route('/', methods=["GET"])
 def getComments():
     comments = Comment.query.all()
     print([comment.to_dict() for comment in comments])
@@ -18,7 +18,7 @@ def getComments():
 # GET ALL COMMENTS FOR A POST
 
 
-@comment_route.route('/post/<int:id>', methods=["GET"])
+@comment_routes.route('/post/<int:id>', methods=["GET"])
 def commentIndex(id):
     comments = Comment.query.filter(Comment.post_id == id).all()
     print([comment.to_dict() for comment in comments])
@@ -27,7 +27,7 @@ def commentIndex(id):
 # GET COMMENTS BY ID
 
 
-@comment_route.route('/<int:id>', methods=["GET"])
+@comment_routes.route('/<int:id>', methods=["GET"])
 def getCommentByID(id):
     comments = Comment.query.filter(Comment.id == id).first()
     return comments.to_dict()
@@ -35,7 +35,7 @@ def getCommentByID(id):
 # GET ALL COMMENTS BY USER ID
 
 
-@comment_route.route('/user/<int:id>', methods=["GET"])
+@comment_routes.route('/user/<int:id>', methods=["GET"])
 def getCommentByUserID(id):
     comments = Comment.query.filter(Comment.user_id == id).all()
     return [comment.to_dict() for comment in comments]
@@ -43,7 +43,7 @@ def getCommentByUserID(id):
 # CREATE NEW COMMENTS
 
 
-@comment_route.route('/new/<int:id>', methods=["GET", "POST"])
+@comment_routes.route('/new/<int:id>', methods=["GET", "POST"])
 def newComment(id):
     if request.method == "POST":
 
@@ -65,7 +65,7 @@ def newComment(id):
 # UPDATE COMMENTS
 
 
-@comment_route.route('/update-comments/<int:id>', methods=["GET", "POST"])
+@comment_routes.route('/update-comments/<int:id>', methods=["GET", "POST"])
 def commentUpdate(id):
 
     comment = Comment.query.filter(Comment.id == id).first()
@@ -85,7 +85,7 @@ def commentUpdate(id):
 # DELETE COMMENTS
 
 
-@comment_route.route('/delete-comments/<int:id>', methods=["GET", "POST"])
+@comment_routes.route('/delete-comments/<int:id>', methods=["GET", "POST"])
 def deleteComment(id):
     comment = Comment.query.filter(Comment.id == id).first()
     db.session.delete(comment)

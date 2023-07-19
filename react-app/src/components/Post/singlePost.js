@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, NavLink, Redirect } from 'react-router-dom';
 import { singlePost } from "../../store/posts";
+import AllComments from "../Comment"
 import OpenModalButton from "../OpenModalButton";
 import DeletePost from "../DeletePost"
 import UpdatePost from "../UpdatePost"
@@ -62,6 +63,7 @@ const SingleUserPost = () => {
                             />}
                     </div>
                 </div>
+            <AllComments />
             </div>
         </div>
     )
