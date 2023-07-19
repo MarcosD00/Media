@@ -70,3 +70,11 @@
   border: none;
   background-color: white;
 }
+
+.nav-dropdown-logout{
+  color: rgb(225, 225, 225);
+}
+
+.nav-dropdown-logout:hover{
+  color: rgb(0, 0, 0);
+}

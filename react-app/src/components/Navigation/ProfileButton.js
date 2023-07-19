@@ -39,16 +39,19 @@ function ProfileButton({ user }) {
   return (
     <>
       {user &&
+        <>
           <button className="nav-profile-btn nav-user-button" onClick={openMenu}>
+            Profile
             <img className="nav-profile-photo-btn" src="https://myaaprojects.s3.us-east-2.amazonaws.com/profile-circle.png"/>
             <ul className={ulClassName} ref={ulRef}>
-                <li className="nav-dropdown-li">{user.username}</li>
-                <li className="nav-dropdown-li">{user.email}</li>
-                <li className="nav-dropdown-li">
-                  <button className="nav-dropdown-logout" onClick={handleLogout}>Log Out</button>
-                </li>
+              <div>
+                <p className="nav-dropdown-li">{user.username}</p>
+                <p className="nav-dropdown-li">{user.email}</p>
+                <p className="nav-dropdown-li nav-dropdown-logout" onClick={handleLogout}>Sign Out</p>
+              </div>
             </ul>
           </button>
+        </>
       }
     </>
   );
