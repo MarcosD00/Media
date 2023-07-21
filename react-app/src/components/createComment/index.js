@@ -55,6 +55,7 @@ function CreateComment({ postId }) {
     const submitNo=()=>{
         closeModal()
     }
+    //w
 
     return (
         <>
