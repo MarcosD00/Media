@@ -1,12 +1,15 @@
 #modal {
   position: fixed;
   top: 0;
-  right: 0;
   left: 0;
-  bottom: 0;
+  
+  width: 100%;
+  height: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
 #modal-background {
@@ -15,10 +18,33 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #modal-content {
-  position: absolute;
+  position: relative;
+
+  margin-top: auto;
+  margin-bottom: auto;
+
   background-color:white;
+}
+
+.modal-content[class*="-right"]{
+  margin-left: auto;
+  animation: slide-in 0.3s ease-out;
+}
+
+.modal-content[class*="-left"]{
+  margin-right: auto;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
