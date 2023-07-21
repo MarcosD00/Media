@@ -11,7 +11,7 @@ import UpdateComment from '../UpdateComment';
 import OpenModalButton from "../OpenModalButton";
 import './comment.css';
 
-function AllComments() {
+function AllComments({ postId, newComment }) {
     const { closeModal } = useModal();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -21,8 +21,6 @@ function AllComments() {
     let sessionUser;
     sessionUser = useSelector((state) => state.session.user);
     if (!sessionUser) history.push(`/`);
-
-    let postId = useParams().postId;
 
     const comment = useSelector(state => state.comments ? state.comments.tempState : null);
     const post = useSelector(state => state.posts ? state.posts[postId] : null)
@@ -34,9 +32,8 @@ function AllComments() {
     }
 
     useEffect(() => {
-        dispatch(fetchLoadCommentByPost(postId));
-    }, [dispatch, postId]);
-
+        dispatch(fetchLoadCommentByPost(postId))
+    }, [dispatch, postId, newComment]);
     useEffect(() => {
         dispatch(allPosts())
     }, [dispatch]);
@@ -44,26 +41,26 @@ function AllComments() {
     return (
         <div className='main-comment-page'>
             {comment?.map(ele =>
-            <>
-            <div className='comment-container'>
-                    <p className='name-display'>{ele.User_firstName} {ele.User_lastName} · {ele.created_at}</p>
-                    <p className='comment-display'>{ele.comment}</p>
+            <div key={ele.id}>
+                <div className='comment-container'>
+                        <p className='name-display'>{ele.User_firstName} {ele.User_lastName} · {ele.created_at}</p>
+                        <p className='comment-display'>{ele.comment}</p>
+                </div>
+                {sessionUser.id === ele.User_id ?
+                <div>
+                    <OpenModalButton buttonText="Delete" 
+                    modalComponent={<DeleteComment comment={ele.id} />} /> 
+                </div> :
+                    null
+                }
+                {sessionUser.id === ele.User_id ?
+                <div>
+                    <OpenModalButton buttonText="update" 
+                    modalComponent={<UpdateComment id={ele.id} />} /> 
+                </div> :
+                    null
+                }
             </div>
-            {sessionUser.id === ele.User_id ?
-            <div>
-                <OpenModalButton buttonText="Delete" 
-                modalComponent={<DeleteComment comment={ele.id} />} /> 
-            </div> :
-                null
-            }
-            {sessionUser.id === ele.User_id ?
-            <div>
-                <OpenModalButton buttonText="update" 
-                modalComponent={<UpdateComment id={ele.id} />} /> 
-            </div> :
-                null
-            }
-            </>
             )}
         </div>
     )

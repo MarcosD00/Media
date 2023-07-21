@@ -75,7 +75,6 @@ def commentUpdate(id):
         new_comment = data.get('comment')
         # print('post', post)
         commen.comment = new_comment
-        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', commen)
         db.session.commit()
         return commen.to_dict()
     return

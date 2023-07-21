@@ -47,12 +47,12 @@ const SingleUserPost = () => {
                     <p className="post-sotry">{post.story}</p>
                     <div className="inside-container-clap-comment">
                         {/* <i className="single-clap-comment clap-comment fa-regular fa-comment"/> */}
-                        {/* <OpenModalButton
-                            buttonText= {<i className="single-clap-comment clap-comment fa-regular fa-comment"/>}
+                        <OpenModalButton
+                            buttonText={<i className="single-clap-comment clap-comment fa-regular fa-comment"/>}
                             className="all-delete-btn delete-update-btn"
-                            modalComponent={<CreateComment id={post.id} />}
-                            />
-                        <p className="single-clap-comment">108</p> */}
+                            modalProps={{hAlign: "right", className: "modal-create-comment"}}
+                            modalComponent={<CreateComment postId={post.id} />}
+                            /> 
                         {user && post.owner_id === user && <OpenModalButton
                                 buttonText="Edit"
                                 className="all-update-btn delete-update-btn"
@@ -65,8 +65,6 @@ const SingleUserPost = () => {
                             />}
                     </div>
                 </div>
-                <CreateComment />
-                {/* <AllComments /> */}
             </div>
         </div>
     )
