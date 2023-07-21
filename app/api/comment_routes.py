@@ -12,7 +12,6 @@ comment_routes = Blueprint('comment', __name__)
 @comment_routes.route('/', methods=["GET"])
 def getComments():
     comments = Comment.query.all()
-    print([comment.to_dict() for comment in comments])
     return [comment.to_dict() for comment in comments]
 
 # GET ALL COMMENTS FOR A POST
@@ -21,7 +20,6 @@ def getComments():
 @comment_routes.route('/post/<int:id>', methods=["GET"])
 def commentIndex(id):
     comments = Comment.query.filter(Comment.post_id == id).all()
-    print([comment.to_dict() for comment in comments])
     return [comment.to_dict() for comment in comments]
 
 # GET COMMENTS BY ID
@@ -68,7 +66,7 @@ def newComment(id):
 @comment_routes.route('/update-comments/<int:id>', methods=["GET", "POST"])
 def commentUpdate(id):
 
-    comment = Comment.query.filter(Comment.id == id).first()
+    commen = Comment.query.filter(Comment.id == id).first()
     if request.method == "POST":
 
         # print('comment', comment)
@@ -76,10 +74,10 @@ def commentUpdate(id):
         # print('data', data)
         new_comment = data.get('comment')
         # print('post', post)
-        comment.body = comment
-        # print('comment.body', comment)
+        commen.comment = new_comment
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', commen)
         db.session.commit()
-        return comment.to_dict()
+        return commen.to_dict()
     return
 
 # DELETE COMMENTS

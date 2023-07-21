@@ -5,59 +5,60 @@ const ADD_COMMENT = "comments/ADD_COMMENT"
 const UPDATE_COMMENTS = "comments/UPDATE_COMMENTS"
 const DELETE_COMMENTS = "comments/DELETE_COMMENTS"
 
-const loadComment = payload => ({
+const loadComment = comments => ({
     type: LOAD_COMMENTS,
-    payload
+    comments
 })
 
-const loadCommentByPost = payload => ({
+const loadCommentByPost = comments => ({
     type: LOAD_COMMENTS_BY_POST,
-    payload
+    comments
 })
 
-const loadCommentByUser = payload => ({
+const loadCommentByUser = comments => ({
     type: LOAD_COMMENTS_BY_USER,
-    payload
+    comments
 })
 
-const addComment = payload => ({
+const addComment = comments => ({
     type: ADD_COMMENT,
-    payload
+    comments
 })
 
-const updateComment = payload => ({
+const updateComment = comments => ({
     type: UPDATE_COMMENTS,
-    payload
+    comments
 })
 
-const deleteComment = payload => ({
+const deleteComment = comments => ({
     type: DELETE_COMMENTS,
-    payload
+    comments
 })
 
 export const fetchLoadComments = () => async dispatch => {
     const response = await fetch(`/api/comment/`);
     if (response.ok) {
-        const payload = await response.json();
-        dispatch(loadComment(payload));
+        const comments = await response.json();
+        dispatch(loadComment(comments));
     }
 }
 
 export const fetchLoadCommentByPost = (postId) => async (dispatch) => {
     const response = await fetch(`/api/comment/post/${postId}`);
-
+    
     if (response.ok) {
-        const payload = await response.json();
-        dispatch(loadCommentByPost(payload));
+        const comments = await response.json();
+        dispatch(loadCommentByPost(comments));
     }
 }
 
 export const fetchLoadCommentByUser = (userId) => async (dispatch) => {
     const response = await fetch(`/api/comment/user/${userId}`);
+    const comments = await response.json();
 
     if (response.ok) {
-        const payload = await response.json();
-        dispatch(loadCommentByUser(payload))
+        dispatch(loadCommentByUser(comments))
+        return comments
     }
 }
 
@@ -70,14 +71,14 @@ export const fetchAddComment = (newCommentForm, postId) => async (dispatch) => {
         body: JSON.stringify(newCommentForm),
     });
     if (response.ok) {
-        const payload = await response.json();
-        dispatch(addComment(payload))
-        return payload
+        const comments = await response.json();
+        dispatch(addComment(comments))
+        return comments
     }
 }
 
 export const fetchUpdateComment = (updatedCommentForm, commentId) => async (dispatch) => {
-    const res = await fetch(`/api/coment/update-comments/${commentId}`, {
+    const res = await fetch(`/api/comment/update-comments/${commentId}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -85,9 +86,10 @@ export const fetchUpdateComment = (updatedCommentForm, commentId) => async (disp
         body: JSON.stringify(updatedCommentForm),
     });
     if (res.ok) {
-        const payload = await res.json();
-        dispatch(updateComment(payload));
-        return payload;
+        const comments = await res.json();
+        console.log(comments)
+        dispatch(updateComment(comments));
+        return comments;
     }
 }
 
@@ -112,31 +114,31 @@ const initialState = {};
 export default function commentReducer(state = initialState, action) {
     switch (action.type) {
         case LOAD_COMMENTS:
-            const allComments = {}
-            action.payload.forEach(ele => allComments[ele.id] = ele);
+            const allComments = action.comments || []
+            // action.comments.forEach(ele => allComments[ele.id] = ele);
             return { ...state, allComments }
 
         case LOAD_COMMENTS_BY_POST:
-            const tempState = {}
-            action.payload.forEach(ele => tempState[ele.id] = ele);
+            const tempState = action.comments || []
+            // action.comments.forEach(ele => tempState[ele.id] = ele);
             return { ...state, tempState }
 
 
         case LOAD_COMMENTS_BY_USER:
-            const newState = {}
-            action.payload.forEach(ele => newState[ele.id] = ele);
+            const newState = action.comments || []
+            action.comments.forEach(ele => newState[ele.id] = ele);
             return { ...state, newState }
 
         case ADD_COMMENT:
-            return { ...state, [action.payload.id]: action.payload }
+            return { ...state, [action.comments.id]: action.comments }
 
 
         case UPDATE_COMMENTS:
-            return { ...state, [action.payload.id]: action.payload };
+            return { ...state, [action.comments.id]: action.comments };
 
         case DELETE_COMMENTS:
             const stateN = { ...state.newState }
-            delete stateN[action.payload]
+            delete stateN[action.comments]
             return { ...state }
 
 

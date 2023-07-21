@@ -1,0 +1,56 @@
+.main-comment-page{
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-container{
+    max-width: 680px;
+
+    padding-bottom: 25px;
+
+    overflow-wrap: break-word;
+}
+
+.name-display{
+    font-weight: 500;
+}
+
+.comment-display{
+    font-weight: 350;
+}
+
+.comment-submit-text{
+    width: 680px;
+    height: 100px;
+
+    border: none;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-comment-btn{
+    margin: 13px 35px 13px 470px;
+    padding: 5px 18px;
+
+    border: none;
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    color: white;
+    background-color: #1a8917;
+}
+
+.comment-cancel-btn{
+    padding: 5px 15px;
+
+    cursor: pointer;
+}
+
+.comment-btn-container{
+    display: flex;
+    flex-direction: row;
+}

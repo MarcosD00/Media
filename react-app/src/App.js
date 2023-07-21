@@ -32,7 +32,7 @@ function App() {
           <Route exact path="/post/:postId">
             <SingleUserPost />
           </Route>
-          <Route exact path="/comment">
+          <Route exact path="/comment/post/:postId">
             <AllComments />
           </Route>
         </Switch>

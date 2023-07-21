@@ -14,5 +14,5 @@ class PostForm(FlaskForm):
 class CommentForm(FlaskForm):
     user_id = IntegerField('userId', validators=[DataRequired()])
     post_id = IntegerField('postId', validators=[DataRequired()])
-    comment = StringField('Answer', validators=[DataRequired()])
+    comment = StringField('Comment', validators=[DataRequired()])
     submit = SubmitField('Post Comment')

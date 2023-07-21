@@ -5,6 +5,7 @@ import { singlePost } from "../../store/posts";
 import AllComments from "../Comment"
 import OpenModalButton from "../OpenModalButton";
 import DeletePost from "../DeletePost"
+import CreateComment from "../createComment"
 import UpdatePost from "../UpdatePost"
 import "./post.css"
 
@@ -33,13 +34,11 @@ const SingleUserPost = () => {
                     <h1>{post.title}</h1>
                     <div className="post-user-container">
                         <img className="post-profile-pic" src="https://myaaprojects.s3.us-east-2.amazonaws.com/profile-circle.png" alt="photo"/>
-                        <p className="post-user-name">{post.User_firstName} {post.User_lastName}</p>
+                        <p className="post-user-name name-display">{post.User_firstName} {post.User_lastName}</p>
                     </div>
                     <p>{post.created_at}</p>
                 </div>
                 <div className="single-clap-comment-container">
-                    <i className="single-clap-comment clap-comment fa-solid fa-hands-clapping" />
-                    <p className="single-clap-comment">64</p>
                     <i className="single-clap-comment clap-comment fa-regular fa-comment" />
                     <p className="single-clap-comment">108</p>
                 </div>
@@ -47,10 +46,13 @@ const SingleUserPost = () => {
                     <img className="single-container-photo" src={post.photo }/>
                     <p className="post-sotry">{post.story}</p>
                     <div className="inside-container-clap-comment">
-                        <i className="single-clap-comment clap-comment fa-solid fa-hands-clapping" />
-                        <p className="single-clap-comment">64</p>
-                        <i className="single-clap-comment clap-comment fa-regular fa-comment" />
-                        <p className="single-clap-comment">108</p>
+                        {/* <i className="single-clap-comment clap-comment fa-regular fa-comment"/> */}
+                        {/* <OpenModalButton
+                            buttonText= {<i className="single-clap-comment clap-comment fa-regular fa-comment"/>}
+                            className="all-delete-btn delete-update-btn"
+                            modalComponent={<CreateComment id={post.id} />}
+                            />
+                        <p className="single-clap-comment">108</p> */}
                         {user && post.owner_id === user && <OpenModalButton
                                 buttonText="Edit"
                                 className="all-update-btn delete-update-btn"
@@ -59,11 +61,12 @@ const SingleUserPost = () => {
                         {user && post.owner_id === user && <OpenModalButton
                                 buttonText="Delete"
                                 className="all-delete-btn delete-update-btn"
-                                modalComponent={<DeletePost id={post.id}><Redirect to="/"/></DeletePost>}
+                                modalComponent={<DeletePost id={post.id}><Redirect to="/" /></DeletePost>}
                             />}
                     </div>
                 </div>
-            <AllComments />
+                <CreateComment />
+                {/* <AllComments /> */}
             </div>
         </div>
     )

@@ -18,7 +18,7 @@ function CreatePost() {
 
     const err = {}
     
-    if (story.length < 3000) err['story'] = "your story is too short";
+    if (story.length < 1000) err['story'] = "your story is too short";
 
     let newPost = {}
     if (!Object.values(err).length) {
