@@ -26,7 +26,7 @@ def upgrade():
     op.create_table('posts',
                     sa.Column('id', sa.Integer(), nullable=False),
                     sa.Column('owner_id', sa.Integer(), nullable=False),
-                    sa.Column('title', sa.String(length=300), nullable=False),
+                    sa.Column('title', sa.String(length=400), nullable=False),
                     sa.Column('story', sa.String(length=4000), nullable=False),
                     sa.Column('photo', sa.String(length=1000), nullable=True),
                     sa.Column('created_at', sa.Date(), nullable=False),
@@ -43,7 +43,7 @@ def upgrade():
                     sa.Column('user_id', sa.Integer(), nullable=False),
                     sa.Column('post_id', sa.Integer(), nullable=False),
                     sa.Column('comment', sa.String(
-                        length=500), nullable=False),
+                        length=1000), nullable=False),
                     sa.Column('created_at', sa.Date(), nullable=False),
                     sa.Column('updated_at', sa.Date(), nullable=False),
                     sa.ForeignKeyConstraint(['post_id'], ['posts.id'], ),
