@@ -81,7 +81,7 @@
 }
 
 .post-sotry{
-margin-top: 50px;
+    margin-top: 50px;
 
     line-height: 32px;
     font-size: 20px;
@@ -96,5 +96,10 @@ margin-top: 50px;
 }
 
 .test {
+    max-width: 500px;
+    max-height: 57px;
+
     color: rgb(117,117,117);
+
+    overflow: hidden;
 }
