@@ -21,11 +21,11 @@ function LoginFormPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
-    setTimeout(
-      closeModal, 2500
-    )
     if (data) {
       setErrors(data);
+      setTimeout(
+        closeModal, 2500
+      )
     }
   };
 
