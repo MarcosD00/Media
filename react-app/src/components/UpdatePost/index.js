@@ -11,7 +11,7 @@ function UpdatePost({ id }) {
     const dispatch = useDispatch();
 
     const post = useSelector(state => state.posts.allPosts[id])
-    console.log(id)
+    console.log(useSelector(state => state.posts.allPosts))
     const user_id = useSelector(state => state.session.user.id);
     
     const [photo, setPhoto] = useState(post.photo)

@@ -12,26 +12,25 @@ import "./updateComment.css"
 function UpdateComment({ id, postId }) {
     const { closeModal } = useModal();
     const history = useHistory();
-    let post_id = useParams().postId;
 
-    const comments = useSelector(state =>state.comments.tempState[id]);
+    const comments = useSelector(state =>state.comments.tempState.filter(obj => {
+        return obj.id === id
+    }));
 
-    // console.log(comments.map(ele => {
-    //     return ele.id
-    // }))
     const sessionUser = useSelector((state) => state.session.user);
     if (!sessionUser) history.push(`/`);
 
     const user_id = useSelector(state => state.session.user.id);
 
-    const [comment, setComment] = useState(comments.comment);
+    const [comment, setComment] = useState(comments[0].comment);
+    // console.log(comments[0].comment,'dfsfdfsdfsd')
     const [validationErrors, setValidationErrors] = useState({});
     const [hasSubmitted, setHasSubmitted] = useState(false);
     const errors = {};
 
     useEffect(() => {
-        if (comment.length === 0) errors.comment = 'Comment is required';
-        if (comment.length < 5) errors.comment = 'Comment must be at least 5 characters';
+        // if (comment.length === 0) errors.comment = 'Comment is required';
+        // if (comment.length < 5) errors.comment = 'Comment must be at least 5 characters';
 
         setValidationErrors(errors);
     }, [comment])
@@ -55,7 +54,7 @@ function UpdateComment({ id, postId }) {
 
         if (createdComment) {
             closeModal()
-            history.push(`/post/${postId}`);
+            // history.push(`/post/${postId}`);
         }
     }
 
@@ -70,7 +69,9 @@ function UpdateComment({ id, postId }) {
                 {validationErrors.comment && <p className="title-error">{validationErrors.comment}</p>}
                     <textarea className='comment-submit-text' placeholder='What are your thoughts?'value={comment}
                         onChange={(e) => setComment(e.target.value)} />
-                        <button disable={comment.length < 5} className="submit-comment-btn" type="submit">Respond</button>
+                        <button 
+                        // disable={comment.length < 5} 
+                        className="submit-comment-btn" type="submit">Respond</button>
                         <p className="comment-cancel-btn" onClick={submitNo}>Cancel</p>
 
                 </form >
