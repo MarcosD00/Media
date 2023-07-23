@@ -28,7 +28,7 @@ function DeleteComment({ comment, postId }) {
         dispatch(fetchDeleteComment(commentId))
             .then(dispatch(fetchLoadCommentByUser(userId)))
             .then(dispatch(fetchLoadCommentByUser(userId)))
-            .then(history.push(`/post/${postId}`))
+            // .then(history.push(`/post/${postId}`))
             .then(closeModal())
     }
 
