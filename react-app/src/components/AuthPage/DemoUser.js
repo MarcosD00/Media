@@ -13,7 +13,7 @@ const DemoUser = () => {
     dispatch(sessionActions.login("demo@aa.io", "password"))
     history.push('/')
     setTimeout(
-      closeModal, 200
+      closeModal, 500
     )
   };
 
