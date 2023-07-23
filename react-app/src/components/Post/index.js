@@ -9,16 +9,16 @@ import "./post.css"
 
 
 const PostComponent = () => {
+    const posts = useSelector(state => Object.values(state.posts.allPosts))
+    const us = useSelector(state => state.session.user)
 
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(allPosts())
         
-    }, [dispatch]);
+    }, [dispatch, posts]);
 
     
-    const posts = useSelector(state => Object.values(state.posts.allPosts))
-    const us = useSelector(state => state.session.user)
     let user;
     if (us) {
         user = us.id
