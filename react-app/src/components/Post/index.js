@@ -25,7 +25,7 @@ const PostComponent = () => {
     }
 
     const sessionUser = useSelector((state) => state.session.user);
-    if (!sessionUser) return <Redirect to="/login" />;
+    if (!sessionUser) return <Redirect to="/landing" />;
 
     return (
         <div className="main-post-page">
@@ -40,7 +40,7 @@ const PostComponent = () => {
                                 <div className="display-info-container">
                                     <div className="story-title-and-description">
                                         <h3 className="story-title">{ele.title}</h3>
-                                        <p className="test">{ele.story}</p>
+                                        <p className="story-description">{ele.story}</p>
                                     </div>
                                     <div>
                                         <img className="post-story-img" src={ele.photo}/>

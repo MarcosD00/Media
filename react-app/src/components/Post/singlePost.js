@@ -25,13 +25,13 @@ const SingleUserPost = () => {
     }
 
     const sessionUser = useSelector((state) => state.session.user);
-    if (!sessionUser) return <Redirect to="/login" />;
+    if (!sessionUser) return <Redirect to="/landing" />;
 
     return (
         <div className="main-post-page">
             <div className="display-all-containers">
                 <div className="single-container">
-                    <h1>{post.title}</h1>
+                    <h1 className="single-post-title">{post.title}</h1>
                     <div className="post-user-container">
                         <img className="post-profile-pic" src="https://myaaprojects.s3.us-east-2.amazonaws.com/profile-circle.png" alt="photo"/>
                         <p className="post-user-name name-display">{post.User_firstName} {post.User_lastName}</p>
@@ -39,8 +39,12 @@ const SingleUserPost = () => {
                     <p>{post.created_at}</p>
                 </div>
                 <div className="single-clap-comment-container">
-                    <i className="single-clap-comment clap-comment fa-regular fa-comment" />
-                    <p className="single-clap-comment">108</p>
+                <OpenModalButton
+                            buttonText={<i className="single-clap-comment clap-comment fa-regular fa-comment"/>}
+                            className="create-comment-btn"
+                            modalProps={{hAlign: "right", className: "modal-create-comment"}}
+                            modalComponent={<CreateComment postId={post.id} />}
+                            /> 
                 </div>
                 <div className="single-container-body">
                     <img className="single-container-photo" src={post.photo }/>
@@ -49,7 +53,7 @@ const SingleUserPost = () => {
                         {/* <i className="single-clap-comment clap-comment fa-regular fa-comment"/> */}
                         <OpenModalButton
                             buttonText={<i className="single-clap-comment clap-comment fa-regular fa-comment"/>}
-                            className="all-delete-btn delete-update-btn"
+                            className="create-comment-btn"
                             modalProps={{hAlign: "right", className: "modal-create-comment"}}
                             modalComponent={<CreateComment postId={post.id} />}
                             /> 

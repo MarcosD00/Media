@@ -1,0 +1,47 @@
+.landing-page-top-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    background-color: #FFC017;
+
+    border-bottom:1px solid black;
+}
+
+.slogan-side{
+    margin-right: 180px; 
+    padding: 43px 0px 92px 0px;
+}
+
+.landing-title{
+    margin: 5px  auto;
+
+    font-weight: 400;
+    font-size: 106px;
+    letter-spacing: -0.05em;
+}
+
+.landing-slogan-frase{
+    margin-bottom: 50px;
+
+    font-weight: 350;
+    font-size: 22px;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    max-width: 440px;
+
+}
+
+.start-reading-btn{
+    padding: 8px 30px;
+
+    color: white;
+    background-color: black;
+
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+.start-reading-container{
+    max-width: 213px;
+}

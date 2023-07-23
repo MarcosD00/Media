@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import AuthPage from "./components/AuthPage";
 import CreatePost from "./components/createPost";
 import SingleUserPost from "./components/Post/singlePost"
+import LandingPage from "./components/LandingPage"
 import PostComponent from "./components/Post";
 import Navigation from "./components/Navigation";
 import AllComments from "./components/Comment"
@@ -12,16 +13,26 @@ import { authenticate } from "./store/session";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const location = useLocation()
   useEffect(() => {
     dispatch(authenticate()).then(() => setIsLoaded(true));
   }, [dispatch]);
+
+  let pageBackgroundColor
+
+	if(location.pathname === "/landing"){
+		pageBackgroundColor = 'landing-container-color'
+	} else {
+		pageBackgroundColor = 'landing-page-container'
+	}
+
   return (
-    <div>
+    <div className={pageBackgroundColor}>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route exact path="/login" >
-            <AuthPage />
+          <Route exact path="/landing">
+            <LandingPage />
           </Route>
           <Route exact path="/">
             <PostComponent />

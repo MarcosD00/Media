@@ -10,16 +10,19 @@ function UpdatePost({ id }) {
     
     const dispatch = useDispatch();
 
+    const post = useSelector(state => state.posts.allPosts[id])
+    console.log(id)
     const user_id = useSelector(state => state.session.user.id);
     
-    const [photo, setPhoto] = useState("")
-    const [title, setTitle] = useState("")
-    const [story, setStory] = useState("");
+    const [photo, setPhoto] = useState(post.photo)
+    const [title, setTitle] = useState(post.title)
+    const [story, setStory] = useState(post.story);
     const [validationErrors, setValidationErrors] = useState({});
     const [run, setRun] = useState("no")
 
     const err = {}
-    if (story.length < 3000) err['story'] = "your story is too short";
+    if (title.length < 50) err['title'] = "your title is too short";
+    if (story.length < 100) err['story'] = "your story is too short";
 
     let newPost = {}
     if (!Object.values(err).length) {
@@ -62,7 +65,7 @@ function UpdatePost({ id }) {
     }, [run])
 
     const sessionUser = useSelector((state) => state.session.user);
-    if (!sessionUser) return <Redirect to="/login" />;
+    if (!sessionUser) return <Redirect to="/landing" />;
 
     return (
         <div className="updateDiv">

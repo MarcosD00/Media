@@ -18,9 +18,9 @@ function ProfileButton({ user }) {
     if (!showMenu) return;
 
     const closeMenu = (e) => {
-      if (!ulRef.current.contains(e.target)) {
+      // if (!ulRef.current.contains(e.target)) {
         setShowMenu(false);
-      }
+      // }
     };
 
     document.addEventListener("click", closeMenu);
@@ -31,7 +31,7 @@ function ProfileButton({ user }) {
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout()).then(setShowMenu(false))
-    history.push("/login")
+    history.push("/landing")
   };
 
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
@@ -47,7 +47,7 @@ function ProfileButton({ user }) {
               <div>
                 <p className="nav-dropdown-li">{user.username}</p>
                 <p className="nav-dropdown-li">{user.email}</p>
-                <p className="nav-dropdown-li nav-dropdown-logout" onClick={handleLogout}>Sign Out</p>
+                <p className="nav-dropdown-li nav-dropdown-sing-out" onClick={handleLogout}>Sign Out</p>
               </div>
             </ul>
           </button>

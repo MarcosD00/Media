@@ -49,14 +49,14 @@ function AllComments({ postId, newComment }) {
                 {sessionUser.id === ele.User_id ?
                 <div>
                     <OpenModalButton buttonText="Delete" 
-                    modalComponent={<DeleteComment comment={ele.id} />} /> 
+                    modalComponent={<DeleteComment comment={ele.id} postId={postId}/>} /> 
                 </div> :
                     null
                 }
                 {sessionUser.id === ele.User_id ?
                 <div>
                     <OpenModalButton buttonText="update" 
-                    modalComponent={<UpdateComment id={ele.id} />} /> 
+                    modalComponent={<UpdateComment id={ele.id} postId={postId}/>} /> 
                 </div> :
                     null
                 }
