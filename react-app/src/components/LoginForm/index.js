@@ -22,7 +22,7 @@ function LoginFormPage() {
     e.preventDefault();
     const data = await dispatch(login(email, password));
     setTimeout(
-      closeModal, 3000
+      closeModal, 2500
     )
     if (data) {
       setErrors(data);
