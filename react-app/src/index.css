@@ -1,2 +1,9 @@
 /* TODO Add site wide styles */
 
+body {
+    margin: 0px;
+}
+
+.landing-container-color{
+    background-color: #FFC017;
+}

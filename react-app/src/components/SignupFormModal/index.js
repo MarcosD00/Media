@@ -73,9 +73,6 @@ function SignupFormModal() {
 				{submitted && errors.firstName && <p className="error">{errors.firstName}</p>}
 				{submitted && errors.lastName && <p className="error">{errors.lastName}</p>}
 				{submitted && errors.password && <p className="error">{errors.password}</p>}
-				{/* {submitted && errors.confirmPassword && (
-					<p className="error">{errors.confirmPassword}</p>)} */}
-				{/* {submitted && errors.generalError && <p className="error">{errors.generalError}</p>} */}
 				{submitted && errors.map((error, index) => <p className="error" key={index}>{error}</p>)}
 				<label>
 					Email
@@ -133,7 +130,7 @@ function SignupFormModal() {
 				/>
 				<button
 					onClick={handleSubmit}
-					disabled={Object.values(errors).length > 0}
+					disabled={Object.values(errors).length > 0 || email.length < 4}
 					id={Object.values(errors).length > 0 ? 'sign-up-disabled' : 'sign-up-active'}
 				>Sign Up</button>
 			</div>

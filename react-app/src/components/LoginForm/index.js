@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import { login } from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import OpenModalButton from "../OpenModalButton";
+import SignupFormModal from "../SignupFormModal";
+import DemoUser from "../AuthPage/DemoUser";
+import { useModal } from "../../context/Modal";
 import './LoginForm.css';
 
 function LoginFormPage() {
   const dispatch = useDispatch();
+  const { closeModal } = useModal()
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,11 +23,13 @@ function LoginFormPage() {
     const data = await dispatch(login(email, password));
     if (data) {
       setErrors(data);
+      closeModal()
     }
   };
 
   return (
     <>
+      <h2>Welcome back.</h2>
       <form className="login-form" onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
@@ -55,6 +62,14 @@ function LoginFormPage() {
             }
         type="submit">Log In</button>
       </form>
+      <DemoUser
+              itemText="Log in as Demo User"
+            />
+      <p>No account?</p> <OpenModalButton
+            buttonText="Create one"
+            className="sign-in-btn"
+            modalComponent={<SignupFormModal />}
+          />
     </>
   );
 }

@@ -8,12 +8,16 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 const DemoUser = () => {
   const dispatch = useDispatch();
   const history = useHistory()
+  const { closeModal } = useModal();
   const onClick = () => {
     dispatch(sessionActions.login("demo@aa.io", "password"))
-      .then(history.push('/'))
+    history.push('/')
+    setTimeout(
+      closeModal, 200
+    )
   };
 
-  return <Link to='/' onClick={onClick} className="demo-user">Demo User</Link>;
+  return <p onClick={onClick} className="demo-user">Demo User</p>;
 };
 
 export default DemoUser;

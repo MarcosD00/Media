@@ -1,0 +1,9 @@
+.demo-user {
+    color: lightgray;
+}
+
+.demo-user:hover {
+    color: black;
+
+    cursor: pointer;
+}

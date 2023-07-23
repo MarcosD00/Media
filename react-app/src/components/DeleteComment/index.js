@@ -9,12 +9,12 @@ import { fetchDeleteComment, fetchLoadCommentByUser } from "../../store/comments
 
 
 
-function DeleteComment({ comment }) {
+function DeleteComment({ comment, postId }) {
     const { closeModal } = useModal();
     const dispatch = useDispatch();
     const history = useHistory()
 
-    let postId = useParams().postId;
+    // let postId = useParams().postId;
 
     const userId = useSelector(state => state.session.user.id)
 
@@ -28,7 +28,7 @@ function DeleteComment({ comment }) {
         dispatch(fetchDeleteComment(commentId))
             .then(dispatch(fetchLoadCommentByUser(userId)))
             .then(dispatch(fetchLoadCommentByUser(userId)))
-            .then(history.push(`/`))
+            .then(history.push(`/post/${postId}`))
             .then(closeModal())
     }
 

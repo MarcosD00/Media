@@ -15,11 +15,49 @@
   font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
+.landing-nav-bar {
+  /* margin: 15px auto; */
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  background-color: #FFC017;
+
+  border-bottom: solid 1px rgb(0,0,0) ;
+
+  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
 .nav-write-profile-btn{
   float: right;
   display: inline;
 
-  margin: auto 20px;
+  margin-right: 250px;
+}
+
+.landing-write-btn{
+
+  text-decoration: none;
+
+  color: #000;
+}
+
+.sign-in-btn{
+  background: none;
+  
+  margin-left: 20px;
+}
+
+.get-started-btn{
+  padding: 8px 20px;
+  margin-left: 20px;
+
+  border-radius: 20px;
+  border: none;
+
+  color: white;
+  background-color: black;
+
+  cursor: pointer;
 }
 
 .home-img-btn{
@@ -71,10 +109,12 @@
   background-color: white;
 }
 
-.nav-dropdown-logout{
+.nav-dropdown-sing-out{
   color: rgb(225, 225, 225);
 }
 
-.nav-dropdown-logout:hover{
+.nav-dropdown-sing-out:hover{
   color: rgb(0, 0, 0);
+
+  cursor: pointer;
 }

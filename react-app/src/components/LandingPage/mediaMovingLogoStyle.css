@@ -1,0 +1,6 @@
+g {
+    transition-property: transform, opacity, fill;
+    transition-duration: 213ms;
+    transition-timing-function: ease-in-out;
+    transform-origin: top;
+  }

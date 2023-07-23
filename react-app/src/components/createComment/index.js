@@ -11,7 +11,7 @@ function CreateComment({ postId }) {
     const history = useHistory();
 
     const sessionUser = useSelector((state) => state.session.user);
-    if (!sessionUser) history.push(`/`);
+    if (!sessionUser) history.push(`/post/${postId}`);
 
     const user_id = useSelector(state => state.session.user.id);
 
@@ -23,7 +23,7 @@ function CreateComment({ postId }) {
 
     useEffect(() => {
         if (comment.length === 0) errors.comment = 'Comment is required';
-        if (comment.length < 25) errors.comment = 'Comment must be at least 25 characters';
+        if (comment.length < 5) errors.comment = '*Comment* must be at least 5 characters';
 
         setValidationErrors(errors);
     }, [comment])
@@ -61,11 +61,11 @@ function CreateComment({ postId }) {
         <>
             <form className="form" onSubmit={onSubmit}>
 
-                <p className='error'> {hasSubmitted && validationErrors.comment && `${validationErrors.comment}`}</p>
+            {validationErrors.comment && <p className="title-error">{validationErrors.comment}</p>}
                 <textarea className='comment-submit-text' placeholder='What are your thoughts?' type="text" value={comment}
                     onChange={(e) => setComment(e.target.value)} />
                 <div className='comment-btn-container'>
-                    <button className="submit-comment-btn" type="submit">Respond</button>
+                    <button className="submit-comment-btn" disable={comment.length < 5} type="submit">Respond</button>
                     <p className="comment-cancel-btn" onClick={submitNo}>Cancel</p>
                 </div>
 

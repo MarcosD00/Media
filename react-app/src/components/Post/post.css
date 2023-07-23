@@ -68,6 +68,8 @@
 
 .story-title{
     color: black;
+
+    word-break: break-word;
 }
 
 .post-user-container{
@@ -81,6 +83,7 @@
 }
 
 .post-sotry{
+    word-break: break-word;
     margin-top: 50px;
 
     line-height: 32px;
@@ -95,11 +98,26 @@
     text-decoration: none;
 }
 
-.test {
-    max-width: 500px;
+.story-description {
+    word-break: break-word;
+
     max-height: 57px;
 
     color: rgb(117,117,117);
 
     overflow: hidden;
+}
+
+.single-post-title {
+    word-break: break-word;
+}
+
+.create-comment-btn{
+    padding: 5px;
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
 }
