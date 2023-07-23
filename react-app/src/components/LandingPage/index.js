@@ -25,8 +25,7 @@ function LandingPage () {
                 </div>
             </div>
             <div>
-                <h2>HELLO</h2>
-                {/* <MediaMovingLogo /> */}
+                <MediaMovingLogo />
             </div>
         </div>
     )
