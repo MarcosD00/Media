@@ -1,6 +1,4 @@
 import React from "react";
-import OpenModalButton from "../OpenModalButton";
-import SignupFormModal from "../SignupFormModal";
 import { useLocation } from 'react-router-dom';
 import LoginForm from "../LoginForm";
 import SignupFormPage from "../SignupFormPage";

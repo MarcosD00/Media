@@ -15,23 +15,21 @@ export default function DeletePost({id}){
         history.push('/')
     };
 
-    
+
 
     const submitNo=()=>{
         closeModal()
     }
     
     return(
-        <>
-            <div className="deleteDiv">
+            <div className="delete-container">
 
-                <h3 className="deleteText">Confirm You Want To Delete</h3>
-                <p className="deleteText">This post will be deleted</p>
+                <h3 className="delete-text">Confirm You Want To Delete</h3>
+                <p className="delete-text">*This post will be deleted*</p>
                 <div>
-                    <button onClick={submitDelete}>Confirm</button>
-                    <button onClick={submitNo} type="submit">Cancel</button>
+                    <button className="delete-general-btn" onClick={submitDelete}>Confirm</button>
+                    <button className="cancel-general-btn" onClick={submitNo} type="submit">Cancel</button>
                 </div>
             </div>
-        </>
     )
 }

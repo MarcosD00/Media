@@ -62,17 +62,17 @@ function UpdateComment({ id, postId }) {
     }
 
     return (
-        <div >
+        <div className='comment-update-container'>
+            <h3>Update your comment</h3>
                 <form className="form" onSubmit={onSubmit}>
 
                 {validationErrors.comment && <p className="title-error">{validationErrors.comment}</p>}
-                    <textarea className='comment-submit-text' placeholder='What are your thoughts?'value={comment}
+                <div className="form-submit-btns">
+                    <button isable={comment.length < 5}  className="publish-btn">Update Post</button>
+                    <button onClick={submitNo} className="cancel-btn" type="delNo">Cancel</button>
+                </div>
+                    <textarea className='update-comment-text' placeholder='What are your thoughts?'value={comment}
                         onChange={(e) => setComment(e.target.value)} />
-                        <button 
-                        disable={comment.length < 5} 
-                        className="submit-comment-btn" type="submit">Respond</button>
-                        <p className="comment-cancel-btn" onClick={submitNo}>Cancel</p>
-
                 </form >
         </div>
     )

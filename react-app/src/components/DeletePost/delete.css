@@ -1,0 +1,61 @@
+.delete-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1.5px solid rgb(202, 0, 0);
+    border-radius: 1px;
+
+    width: 300px;
+    height: 170px;
+}
+
+.delete-general-btn{
+    padding: 5px 15px;
+    margin-right: 25px;
+
+    border-radius: 15px;
+    border: 1px solid rgb(202, 0, 0);
+
+    color: rgb(202, 0, 0);
+    background-color: white;
+
+    transition: all 0.7s;
+}
+
+.delete-general-btn:hover{
+    color: white;
+    background-color: rgb(202, 0, 0);
+
+    cursor: pointer;
+
+    transition: all 0.7s;
+}
+
+.cancel-general-btn{
+    padding: 5px 15px;
+    margin-right: 25px;
+
+    border-radius: 15px;
+    border: 1px solid black;
+
+    color: black;
+    background-color: white;
+
+    transition: all 0.7s;
+}
+
+.cancel-general-btn:hover{
+    padding: 5px 15px;
+    margin-right: 25px;
+
+    border-radius: 15px;
+    border: 1px solid black;
+
+    color: white;
+    background-color: black;
+
+    cursor: pointer;
+
+    transition: all 0.7s;
+}

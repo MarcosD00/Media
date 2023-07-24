@@ -77,7 +77,7 @@ function CreatePost() {
                 {validationErrors.story && <p className="story-error">{validationErrors.story}</p>}
                 <div className="form-submit-btns">
                     <button disabled={title.length < 50 || story.length < 100} type="submit" className="publish-btn">Publish</button>
-                    <button onClick={submitNo} type="delNo">Cancel</button>
+                    <button onClick={submitNo} className="cancel-btn" type="delNo">Cancel</button>
                 </div>
                 <div className="form-text-areas">
                     <textarea 

@@ -21,8 +21,16 @@ function UpdatePost({ id }) {
     const [run, setRun] = useState("no")
 
     const err = {}
-    if (title.length < 50) err['title'] = "your title is too short";
-    if (story.length < 100) err['story'] = "your story is too short";
+    const errors = {}
+    
+    useEffect(() => {
+        if (title.length === 0) errors.title = '*title* is required';
+        if (title.length < 50) errors.title = '*title* must be at least 50 characters';
+        if (story.length === 0) errors.story = '*story* is required';
+        if (story.length < 100) errors.story = '*story* must be at least 100 characters';
+
+        setValidationErrors(errors);
+    }, [story, title])
 
     let newPost = {}
     if (!Object.values(err).length) {
@@ -53,6 +61,10 @@ function UpdatePost({ id }) {
 
     }
 
+    const submitNo = () => {
+        history.push('/')
+    }
+
     useEffect(() => {
         if (Object.values(newPost).length && run === "yes") {
             const refun = async () => {
@@ -68,15 +80,37 @@ function UpdatePost({ id }) {
     if (!sessionUser) return <Redirect to="/landing" />;
 
     return (
-        <div className="updateDiv">
-            <h1 className="updateText">Update your story</h1>
-            {validationErrors.post && <p>{validationErrors.post}</p>}
+        <div className="main-create-pagepdateDiv update-modal">
+            <h2 className="updateText">Update your post</h2>
+            {validationErrors.title && <p className="title-error">{validationErrors.title}</p>}
+            {validationErrors.story && <p className="story-error">{validationErrors.story}</p>}
 
-            <form onSubmit={onSubmit} className="updateForm">
-                <textarea value={photo} onChange={updatePhoto} placeholder="Update your photo here"></textarea>
-                <textarea value={title} onChange={updateTitle} placeholder="Update your title here"></textarea>
-                <textarea value={story} onChange={updateStory} placeholder="Update your story here"></textarea>
-                <button className="updateButton">Update Post</button>
+            <form onSubmit={onSubmit} className="createForm">
+                <div className="form-submit-btns">
+                    <button disabled={title.length < 50 || story.length < 100} className="publish-btn">Update Post</button>
+                    <button onClick={submitNo} className="cancel-btn" type="delNo">Cancel</button>
+                </div>
+                <div className="form-text-areas">
+                <textarea 
+                value={photo} 
+                onChange={updatePhoto} 
+                placeholder="Update your photo here"
+                className="simple-style photo-text-submit" >
+                </textarea>
+                <textarea 
+                value={title} 
+                onChange={updateTitle} 
+                placeholder="Update your title here"
+                className="simple-style title-text-submit" >
+                </textarea>
+                <textarea 
+                value={story} 
+                onChange={updateStory} 
+                placeholder="Update your story here"
+                className="simple-style story-text-submit update-text" >
+                </textarea>
+                </div>
+
             </form>
         </div>
     )

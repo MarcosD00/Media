@@ -50,13 +50,17 @@ const PostComponent = () => {
                         <div>
                         {user && ele.owner_id === user && <OpenModalButton
                             buttonText="Edit"
-                            className="all-update-btn delete-update-btn"
-                            modalComponent={<UpdatePost id={ele.id} />}
+                            className="publish-btn"
+                            modalProps={{hAlign: "center", className: "modal-create-comment", id: "modal-background"}}
+                            modalComponent={<UpdatePost id={ele.id} 
+                                />}
                             />}                
                         {user && ele.owner_id === user && <OpenModalButton
                             buttonText="Delete"
-                            className="all-delete-btn delete-update-btn"
-                            modalComponent={<DeletePost id={ele.id} />}
+                            className="all-delete-btn delete-general-btn"
+                            modalComponent={<DeletePost id={ele.id} 
+                            modalProps={{hAlign: "center", className: "modal-create-comment", id: "modal-background"}}
+                                />}
                             />}
                     
                         </div>
