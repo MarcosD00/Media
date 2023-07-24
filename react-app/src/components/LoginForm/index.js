@@ -33,7 +33,7 @@ function LoginFormPage() {
     
     return (
     <div className="login-form-container">
-      <h2>Welcome back.</h2>
+      <h2 className="auth-title">Welcome back.</h2>
       <form className="login-form" onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
@@ -74,8 +74,10 @@ function LoginFormPage() {
               buttonText="Create one"
               className="create-one-btn"
               modalComponent={<SignupFormModal />}
+              modalProps={{hAlign: "center", className: "modal-create-comment", id: "white-modal-background"}}
             />
       </div>  
+        <p className="agreement">Click “Sign In” to agree to Media’s Terms of Service and acknowledge that Medium’s Privacy Policy applies to you.</p>
     </div>
   );
 }

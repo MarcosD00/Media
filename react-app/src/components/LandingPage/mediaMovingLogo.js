@@ -1,28 +1,26 @@
 import React from "react";
 import "./mediaMovingLogoStyle.css"
 
+
 function MediaMovingLogo () {
 
     const allGs = document.querySelectorAll('.svg-graph-list > g');
-
-    const colors = [ '#fcd002', '#0fbeff', '#ff3b41', '#64d6d5', '#EEE', '#FFF' ];
 
     const getRandomBetween = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
     };
 
     setInterval(() => {
-    const match = allGs[getRandomBetween(0, allGs.length)];
+    const match = allGs[getRandomBetween(1000, allGs.length)];
 
     if (match) {
         match.style.opacity = match.style.opacity === '0' ? '1' : '0';
-
-        match.style.fill = colors[getRandomBetween(0, colors.length)];
     }
-    }, 0);
+    }, 1000);
 
     return (
         <>
+            {/* <iframe src="./mediaMoving.html" width="100%" height="500px"/> */}
             <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 585 462"
@@ -30,7 +28,7 @@ function MediaMovingLogo () {
   height={462}
   preserveAspectRatio="xMidYMid meet"
   style={{
-    width: "100%",
+    width: "125%",
     height: "100%",
     transform: "translate3d(0px, 0px, 0px)",
     contentVisibility: "visible"
@@ -8679,7 +8677,6 @@ function MediaMovingLogo () {
     </g>
   </g>
 </svg>
-
         </>
     )
 }

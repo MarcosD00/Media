@@ -21,6 +21,7 @@ function LandingPage () {
                                 fontSize={"20px"}
                                 className="start-reading-btn"
                                 modalComponent={<SignupFormModal />}
+                                modalProps={{hAlign: "center", className: "modal-create-comment", id: "white-modal-background"}}
                             />
                 </div>
             </div>

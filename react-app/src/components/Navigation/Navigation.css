@@ -30,7 +30,8 @@
 .nav-write-profile-btn{
   float: right;
   display: inline;
-
+  
+  margin-top: 10px;
   margin-right: 250px;
 }
 
@@ -42,15 +43,17 @@
 }
 
 .home-img-btn{
-  max-width: 100px;
-  margin-top: 5px;
+  max-width: 90px;
   margin-left: 150px;
+  margin-bottom: 5px;
+
+  text-decoration: none;
 }
 
 .landing-media-title{
   position: absolute;
 
-  top: 40px;
+  top: 30px;
   font-weight: 500;
   font-size: 35px;
 
@@ -96,10 +99,6 @@
   background-color: black;
 
   cursor: pointer;
-}
-
-.home-img-btn{
-  text-decoration: none;
 }
 
 .new-post-btn{

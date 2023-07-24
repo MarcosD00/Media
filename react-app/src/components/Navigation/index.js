@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import OpenModalButton from "../OpenModalButton";
@@ -11,9 +11,9 @@ import './Navigation.css';
 function Navigation({ isLoaded }){
 	const sessionUser = useSelector(state => state.session.user);
 	const location = useLocation()
+	const history = useHistory();
 
 	let navBarclass
-
 	if(location.pathname === "/landing"){
 		navBarclass = 'landing-nav-bar'
 	} else {
@@ -23,19 +23,26 @@ function Navigation({ isLoaded }){
 	if(location.pathname === '/landing' ){
 		return (
 			<div className={navBarclass}>
-					<img className='home-img-btn' src={mediaLogo}></img>
+					<NavLink exact to="/"><img className='home-img-btn' src={mediaLogo}></img></NavLink>
 					<NavLink className="landing-media-title" exact to="/">Media</NavLink>
 				<div className='nav-write-profile-btn'>
-					<NavLink exact to="/" className="landing-write-btn"> Write</NavLink>
+				<OpenModalButton
+					buttonText="Write"
+					className="sign-in-btn"
+					modalComponent={<LoginForm />}
+					modalProps={{hAlign: "center", className: "modal-create-comment", id: "white-modal-background"}}
+					/>
 					<OpenModalButton
 						buttonText="Sign In"
 						className="sign-in-btn"
 						modalComponent={<LoginForm />}
+						modalProps={{hAlign: "center", className: "modal-create-comment", id: "white-modal-background"}}
 					/>
 					<OpenModalButton
 						buttonText="Get started"
 						className="get-started-btn"
 						modalComponent={<SignupFormModal />}
+						modalProps={{hAlign: "center", className: "modal-create-comment", id: "white-modal-background"}}
 					/>
 				</div>
 			</div>

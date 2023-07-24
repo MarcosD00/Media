@@ -54,7 +54,7 @@ const SingleUserPost = () => {
                         <OpenModalButton
                             buttonText={<i className="single-clap-comment clap-comment fa-regular fa-comment"/>}
                             className="create-comment-btn"
-                            modalProps={{hAlign: "right", className: "modal-create-comment"}}
+                            modalProps={{hAlign: "right", className: "modal-create-comment", id : "modal-background"}}
                             modalComponent={<CreateComment postId={post.id} />}
                             /> 
                         {user && post.owner_id === user && <OpenModalButton

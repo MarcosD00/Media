@@ -3,7 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useModal } from "../../context/Modal";
 import { Link } from "react-router-dom";
 import "./userDemoStyle.css"
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 
 const DemoUser = () => {
   const dispatch = useDispatch();
