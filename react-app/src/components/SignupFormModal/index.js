@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { signUp } from "../../store/session";
+import LoginFormPage from "../LoginForm";
+import OpenModalButton from "../OpenModalButton";
+import DemoUser from "../AuthPage/DemoUser";
 import "./SignupForm.css";
 
 function SignupFormModal() {
@@ -35,6 +38,7 @@ function SignupFormModal() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		if(errors.length) return null
 		setSubmitted(true);
 		if (password === confirmPassword) {
 			setErrors([]);
@@ -65,9 +69,9 @@ function SignupFormModal() {
 	};
 
 	return (
-		<>
-			<h1>Sign Up</h1>
-			<div className='signup-modal-form'>
+		<div className='signup-modal-container'>
+			<h2 className="auth-title">Join Media</h2>
+			<div className="signup-form">
 				{submitted && errors.email && <p className="error">{errors.email}</p>}
 				{submitted && errors.username && <p className="error">{errors.username}</p>}
 				{submitted && errors.firstName && <p className="error">{errors.firstName}</p>}
@@ -78,6 +82,7 @@ function SignupFormModal() {
 					Email
 				</label>
 				<input
+					className="login-text-and-password-input"
 					type="text"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
@@ -87,6 +92,7 @@ function SignupFormModal() {
 					Username
 				</label>
 				<input
+					className="login-text-and-password-input"
 					type="text"
 					value={username}
 					onChange={(e) => setUsername(e.target.value)}
@@ -96,6 +102,7 @@ function SignupFormModal() {
 					First Name
 				</label>
 				<input
+					className="login-text-and-password-input"
 					type="text"
 					value={first_name}
 					onChange={(e) => setFirstName(e.target.value)}
@@ -105,6 +112,7 @@ function SignupFormModal() {
 					Last Name
 				</label>
 				<input
+					className="login-text-and-password-input"
 					type="text"
 					value={last_name}
 					onChange={(e) => setLastName(e.target.value)}
@@ -114,6 +122,7 @@ function SignupFormModal() {
 					Password
 				</label>
 				<input
+					className="login-text-and-password-input"
 					type="password"
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
@@ -123,18 +132,32 @@ function SignupFormModal() {
 					Confirm Password
 				</label>
 				<input
+					className="login-text-and-password-input"
 					type="password"
 					value={confirmPassword}
 					onChange={(e) => setConfirmPassword(e.target.value)}
 					required
 				/>
+				<div>
 				<button
 					onClick={handleSubmit}
-					disabled={Object.values(errors).length > 0 || email.length < 4}
+					className="login-submit" 
+					disabled={Object.values(errors).length > 0 || email.length < 4 || !email.includes('@')}
 					id={Object.values(errors).length > 0 ? 'sign-up-disabled' : 'sign-up-active'}
 				>Sign Up</button>
+				</div>
+				<div className="no-account-container">
+				<p className="already-accont-question">Already have an account?</p> 
+				<OpenModalButton
+					buttonText="Sign In"
+					className="have-account-sign-in-btn"
+					modalComponent={<LoginFormPage />}
+					modalProps={{hAlign: "center", className: "modal-create-comment", id: "white-modal-background"}}
+					/>
+      			</div>  
+			<p className="agreement">Click “Sign Up” to agree to Media’s Terms of Service and acknowledge that Medium’s Privacy Policy applies to you.</p>
 			</div>
-		</>
+		</div>
 	);
 }
 

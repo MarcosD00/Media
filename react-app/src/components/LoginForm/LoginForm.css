@@ -63,6 +63,20 @@
 
     cursor: pointer;
   }
+
+  .login-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgb(155, 155, 155);
+
+    height: 500px;
+    width: 400px;
+  }
   
   .login-form {
     margin-top: auto 100px;
@@ -72,46 +86,61 @@
   .login-text-and-password-input{
     width: 92%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   
     border: 1px solid #ccc;
     border-radius: 3px;
   }
   
   .login-submit {
-    display: block;
+    display: inline;
   
-    margin-left: auto;
+    margin-left: 80px;
     width: 25%;
     padding: 10px;
   
-    background-color: #6a9bd5;
+    background-color: rgb(64, 64, 64);
     color: #fff;
   
     border: none;
     border-radius: 50px;
   
     cursor: pointer;
+
+    transition: all 0.7s;
   }
   
   .login-submit:hover {
-    display: block;
-  
-    margin-left: auto;
-    width: 25%;
-    padding: 10px;
-  
-    background-color: #327fde;
+    background-color: black;
     color: #fff;
-  
-    border: none;
-    border-radius: 50px;
-  
-    cursor: pointer;
   
     transition: all 0.7s;
   }
   
   .login-error{
     color: red;
+  }
+
+  .no-account-container {
+    display: flex;
+
+    margin-top: 35px;
+  }
+
+  .no-accont-question{
+    margin: 0px;
+  }
+
+  .create-one-btn{
+    color: #1A8917;
+
+    font-weight: 600;
+
+    border: none;
+    background: none;
+  }
+
+  .agreement{
+    margin-top: 70px;
+    text-align: center;
   }

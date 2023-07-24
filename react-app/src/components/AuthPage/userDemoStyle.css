@@ -1,9 +1,26 @@
 .demo-user {
-    color: lightgray;
+    display: inline;
+
+    padding: 7px 19px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+
+    border: 1px solid black;
+    border-radius: 30px;
+
+    color: black;
+
+    background-color: #FFC017;
+
+    transition: all 0.7s;
 }
 
 .demo-user:hover {
-    color: black;
+    color: #FFC017;
+    background-color: black;
+    border: 1px solid #FFC017;
 
     cursor: pointer;
+
+    transition: all 0.7s;
 }
