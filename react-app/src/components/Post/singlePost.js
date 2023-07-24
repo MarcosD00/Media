@@ -42,8 +42,9 @@ const SingleUserPost = () => {
                 <OpenModalButton
                             buttonText={<i className="single-clap-comment clap-comment fa-regular fa-comment"/>}
                             className="create-comment-btn"
-                            modalProps={{hAlign: "right", className: "modal-create-comment"}}
-                            modalComponent={<CreateComment postId={post.id} />}
+                            modalProps={{hAlign: "right", className: "modal-create-comment", id: "modal-background"}}
+                            modalComponent={<CreateComment postId={post.id}
+                            />}
                             /> 
                 </div>
                 <div className="single-container-body">
@@ -54,17 +55,19 @@ const SingleUserPost = () => {
                         <OpenModalButton
                             buttonText={<i className="single-clap-comment clap-comment fa-regular fa-comment"/>}
                             className="create-comment-btn"
-                            modalProps={{hAlign: "right", className: "modal-create-comment", id : "modal-background"}}
-                            modalComponent={<CreateComment postId={post.id} />}
+                            modalProps={{hAlign: "right", className: "modal-create-comment"}}
+                            modalComponent={<CreateComment postId={post.id}/>}
                             /> 
                         {user && post.owner_id === user && <OpenModalButton
                                 buttonText="Edit"
-                                className="all-update-btn delete-update-btn"
+                                className="publish-btn"
+                                modalProps={{hAlign: "center", className: "modal-create-comment", id: "modal-background"}}
                                 modalComponent={<UpdatePost id={post.id} />}
                             />}
                         {user && post.owner_id === user && <OpenModalButton
                                 buttonText="Delete"
-                                className="all-delete-btn delete-update-btn"
+                                className="delete-general-btn"
+                                modalProps={{hAlign: "center", className: "modal-create-comment", id: "modal-background"}}
                                 modalComponent={<DeletePost id={post.id}><Redirect to="/" /></DeletePost>}
                             />}
                     </div>

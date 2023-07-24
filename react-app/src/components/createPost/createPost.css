@@ -55,4 +55,39 @@
 
     color: white;
     background-color: #1a8917;
+
+    transition: all 0.7s;
+}
+
+.publish-btn:hover{
+    color: rgb(194, 194, 194);
+    background-color: #0a5308;
+
+    cursor: pointer;
+
+    transition: all 0.7s;
+}
+
+.cancel-btn {
+    padding: 7px 15px;
+    margin: auto 10px;
+
+    border-radius: 15px;
+    border: 1px solid #1a8917;
+
+    color: #1a8917;
+    background-color: white;
+
+    transition: all 0.7s;
+}
+
+.cancel-btn:hover {
+    border: 1px solid #1a8917;
+
+    color: white;
+    background-color: #1a8917;
+
+    transition: all 0.7s;
+
+    cursor: pointer;
 }

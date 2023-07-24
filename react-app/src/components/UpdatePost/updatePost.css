@@ -1,0 +1,14 @@
+.update-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 1200px;
+    width: 800px;
+
+    font-family: medium-content-title-font,Georgia,Cambria,"Times New Roman",Times,serif;
+}
+
+.update-text {
+    height: 760px;
+}

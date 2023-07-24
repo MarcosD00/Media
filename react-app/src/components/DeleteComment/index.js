@@ -37,12 +37,13 @@ function DeleteComment({ comment, postId }) {
     }
 
     return (
-        <div>
-            <h1>Confirm Delete</h1>
-            <p>Are you sure you want to delete this comment</p>
-
-            <button type="submit" onClick={handleSubmit}>Yes (Delete Comment)</button>
-            <button type="submit" onClick={handleCancel}>No (Keep Commnet)</button>
+        <div className="delete-container">
+            <h3 className="delete-text">Confirm You Want To Delete</h3>
+            <p className="delete-text">*This comment will be deleted*</p>
+            <div>
+                <button className="delete-general-btn" type="submit" onClick={handleSubmit}>Confirm</button>
+                <button className="cancel-general-btn" type="submit" onClick={handleCancel}>Cancel</button>
+            </div>
         </div>
     )
 

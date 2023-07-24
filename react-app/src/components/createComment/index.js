@@ -59,17 +59,19 @@ function CreateComment({ postId }) {
 
     return (
         <>
-            <form className="form" onSubmit={onSubmit}>
+                {validationErrors.comment && <p className="title-error">{validationErrors.comment}</p>}
+            <div className='create-comment-container'>
+                <form className="form" onSubmit={onSubmit}>
 
-            {validationErrors.comment && <p className="title-error">{validationErrors.comment}</p>}
-                <textarea className='comment-submit-text' placeholder='What are your thoughts?' type="text" value={comment}
-                    onChange={(e) => setComment(e.target.value)} />
-                <div className='comment-btn-container'>
-                    <button className="submit-comment-btn" disable={comment.length < 5} type="submit">Respond</button>
-                    <p className="comment-cancel-btn" onClick={submitNo}>Cancel</p>
-                </div>
+                    <textarea className='comment-submit-text' placeholder='What are your thoughts?' type="text" value={comment}
+                        onChange={(e) => setComment(e.target.value)} />
+                    <div className='comment-btn-container'>
+                        <button className="submit-comment-btn" disable={comment.length < 5} type="submit">Respond</button>
+                        <p className="comment-cancel-btn" onClick={submitNo}>Cancel</p>
+                    </div>
 
-            </form >
+                </form >
+            </div>
 
             <AllComments postId={postId} newComment={createdComment} />
         </>
