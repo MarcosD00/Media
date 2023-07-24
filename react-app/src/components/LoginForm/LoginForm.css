@@ -63,6 +63,10 @@
 
     cursor: pointer;
   }
+
+  .login-form-container{
+    padding: 20px;
+  }
   
   .login-form {
     margin-top: auto 100px;
@@ -79,29 +83,29 @@
   }
   
   .login-submit {
-    display: block;
+    display: inline;
   
     margin-left: auto;
     width: 25%;
     padding: 10px;
   
-    background-color: #6a9bd5;
+    background-color: rgb(64, 64, 64);
     color: #fff;
   
     border: none;
     border-radius: 50px;
   
     cursor: pointer;
+
+    transition: all 0.7s;
   }
   
   .login-submit:hover {
-    display: block;
-  
     margin-left: auto;
     width: 25%;
     padding: 10px;
   
-    background-color: #327fde;
+    background-color: black;
     color: #fff;
   
     border: none;
@@ -114,4 +118,21 @@
   
   .login-error{
     color: red;
+  }
+
+  .no-account-container {
+    display: flex;
+  }
+
+  .no-accont-question{
+    margin: 0;
+  }
+
+  .create-one-btn{
+    color: #1A8917;
+
+    font-weight: 600;
+
+    border: none;
+    background: none;
   }

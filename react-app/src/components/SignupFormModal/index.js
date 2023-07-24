@@ -35,6 +35,7 @@ function SignupFormModal() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		if(errors.length) return null
 		setSubmitted(true);
 		if (password === confirmPassword) {
 			setErrors([]);
@@ -130,7 +131,7 @@ function SignupFormModal() {
 				/>
 				<button
 					onClick={handleSubmit}
-					disabled={Object.values(errors).length > 0 || email.length < 4}
+					disabled={Object.values(errors).length > 0 || email.length < 4 || !email.includes('@')}
 					id={Object.values(errors).length > 0 ? 'sign-up-disabled' : 'sign-up-active'}
 				>Sign Up</button>
 			</div>

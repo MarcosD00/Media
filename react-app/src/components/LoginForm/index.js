@@ -23,14 +23,16 @@ function LoginFormPage() {
     const data = await dispatch(login(email, password));
     if (data) {
       setErrors(data);
-      setTimeout(
-        closeModal, 2500
-      )
     }
-  };
-
-  return (
-    <>
+       if(data == null || data.length == 0){
+        setTimeout(
+          closeModal, 2500
+        )
+      }
+    };
+    
+    return (
+    <div className="login-form-container">
       <h2>Welcome back.</h2>
       <form className="login-form" onSubmit={handleSubmit}>
         <ul>
@@ -62,17 +64,19 @@ function LoginFormPage() {
              disabled={
                 password.length < 1 || email.length < 1
             }
-        type="submit">Log In</button>
-      </form>
+        type="submit">Sign In</button>
       <DemoUser
               itemText="Log in as Demo User"
             />
-      <p>No account?</p> <OpenModalButton
-            buttonText="Create one"
-            className="sign-in-btn"
-            modalComponent={<SignupFormModal />}
-          />
-    </>
+      </form>
+      <div className="no-account-container">
+        <p className="no-accont-question">No account?</p> <OpenModalButton
+              buttonText="Create one"
+              className="create-one-btn"
+              modalComponent={<SignupFormModal />}
+            />
+      </div>  
+    </div>
   );
 }
 
