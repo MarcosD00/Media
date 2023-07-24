@@ -76,14 +76,14 @@ function CreatePost() {
                 {validationErrors.title && <p className="title-error">{validationErrors.title}</p>}
                 {validationErrors.story && <p className="story-error">{validationErrors.story}</p>}
                 <div className="form-submit-btns">
-                    <button disabled={title.length < 50 || story.length < 100} type="submit" className="publish-btn">Publish</button>
+                    <button disabled={title.length < 50 || story.length < 100 } type="submit" className="publish-btn">Publish</button>
                     <button onClick={submitNo} className="cancel-btn" type="delNo">Cancel</button>
                 </div>
                 <div className="form-text-areas">
                     <textarea 
                         value={photo} 
                         onChange={updatePhoto} 
-                        placeholder="Submit a photo here" 
+                        placeholder="Add photo url here (jpg)" 
                         className="simple-style photo-text-submit" 
                     />
                     <textarea
