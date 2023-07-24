@@ -44,8 +44,9 @@ function ProfileButton({ user }) {
             Profile
             <img className="nav-profile-photo-btn" src="https://myaaprojects.s3.us-east-2.amazonaws.com/profile-circle.png"/>
             <ul className={ulClassName} ref={ulRef}>
-              <div>
+              <div className="user-info-container">
                 <p className="nav-dropdown-li">{user.username}</p>
+                <p className="nav-dropdown-li">{user.first_name} {user.last_name}</p>
                 <p className="nav-dropdown-li">{user.email}</p>
                 <p className="nav-dropdown-li nav-dropdown-sing-out" onClick={handleLogout}>Sign Out</p>
               </div>
