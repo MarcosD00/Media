@@ -68,6 +68,9 @@ function SignupFormModal() {
 		}
 	};
 
+	let mustBeValid
+		if (!email.includes('@')) mustBeValid = "- *Your email must contain a '@' to be valid*"
+
 	return (
 		<div className='signup-modal-container'>
 			<h2 className="auth-title">Join Media</h2>
@@ -79,7 +82,7 @@ function SignupFormModal() {
 				{submitted && errors.password && <p className="error">{errors.password}</p>}
 				{submitted && errors.map((error, index) => <p className="error" key={index}>{error}</p>)}
 				<label>
-					Email
+					Email {mustBeValid}
 				</label>
 				<input
 					className="login-text-and-password-input"
