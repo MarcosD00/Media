@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
 import { allPosts } from "../../store/posts";
 import DeletePost from "../DeletePost"
+import PostDate from "../PostDate";
 import OpenModalButton from "../OpenModalButton";
 import UpdatePost from "../UpdatePost"
 import "./post.css"
@@ -10,19 +11,14 @@ import "./post.css"
 
 const PostComponent = () => {
     const posts = useSelector(state => Object.values(state.posts.allPosts))
-    const us = useSelector(state => state.session.user)
+    const user = useSelector(state => state.session.user)
 
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(allPosts())
         
-    }, [dispatch, posts]);
-
-    
-    let user;
-    if (us) {
-        user = us.id
-    }
+    }, [dispatch, posts.length]);
 
     const sessionUser = useSelector((state) => state.session.user);
     if (!sessionUser) return <Redirect to="/landing" />;
@@ -35,7 +31,7 @@ const PostComponent = () => {
                         <NavLink className="single-post" exact to={`/post/${ele.id}`}>
                                 <div className="post-user-container">
                                     <img className="post-profile-pic" src="https://myaaprojects.s3.us-east-2.amazonaws.com/profile-circle.png" alt="photo"/>
-                                    <p className="post-user-name name-display">{ele.User_firstName} {ele.User_lastName} · {ele.created_at}</p>
+                                    <p className="post-user-name name-display">{ele.User_firstName} {ele.User_lastName} · <PostDate date={ele.created_at} /></p>
                                 </div>
                                 <div className="display-info-container">
                                     <div className="story-title-and-description">
@@ -48,14 +44,14 @@ const PostComponent = () => {
                                 </div>   
                         </NavLink>
                         <div>
-                        {user && ele.owner_id === user && <OpenModalButton
+                        {user && ele.owner_id === user.id && <OpenModalButton
                             buttonText="Edit"
                             className="publish-btn"
                             modalProps={{hAlign: "center", className: "modal-create-comment", id: "modal-background"}}
                             modalComponent={<UpdatePost id={ele.id} 
                                 />}
                             />}                
-                        {user && ele.owner_id === user && <OpenModalButton
+                        {user && ele.owner_id === user.id && <OpenModalButton
                             buttonText="Delete"
                             className="all-delete-btn delete-general-btn"
                             modalComponent={<DeletePost id={ele.id} 

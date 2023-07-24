@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from "react-router-dom";
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import PostDate from '../PostDate';
 import { useHistory } from "react-router-dom";
 import { fetchLoadCommentByPost } from '../../store/comments';
 import { allPosts } from '../../store/posts';
@@ -45,7 +44,7 @@ function AllComments({ postId, newComment }) {
                 <div className='comment-container'>
                     <div className="post-user-container">
                         <img className="post-profile-pic" src="https://myaaprojects.s3.us-east-2.amazonaws.com/profile-circle.png" alt="photo"/>
-                        <p className='name-display'>{ele.User_firstName} {ele.User_lastName} · {ele.created_at}</p>
+                        <p className='name-display'>{ele.User_firstName} {ele.User_lastName} · <PostDate date={ele.created_at} /></p>
                     </div> 
                         <p className='comment-display'>{ele.comment}</p>
                     <div className='comment-btn-container'>
