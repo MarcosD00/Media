@@ -3,6 +3,7 @@ from app.models import db, Post, Comment
 from app.forms.form import PostForm
 from flask_login import login_required, current_user
 from sqlalchemy import func
+from app.api.aws_helper import get_unique_filename, allowed_file, upload_file_to_s3
 
 post_routes = Blueprint('post', __name__)
 
@@ -32,27 +33,44 @@ def newPost():
     adds new posts
     """
     form = PostForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    data = form.data
-    if form.validate_on_submit():
-        newPost = Post(
-            owner_id=current_user.id,
-            photo=data['photo'],
-            title=data['title'],
-            story=data['story']
-        )
-        newPost.post_user = current_user
-        db.session.add(newPost)
-        db.session.commit()
-        return newPost.to_dict()
-    else:
-        return form.errors
+    # form['csrf_token'].data = request.cookies['csrf_token']
+
+    if "photo" not in request.files:
+        return {"errors": "photo required"}, 400
+
+    photo = request.files.get("photo")
+
+    if not allowed_file(photo.filename):
+        return {"errors": "file type not permitted"}, 400
+
+    photo.filename = get_unique_filename(photo.filename)
+
+    form = request.form
+
+    upload = upload_file_to_s3(photo)
+    url = upload["url"]
+
+    if "url" not in upload:
+        return upload, 400
+
+    newPost = Post(
+        owner_id=current_user.id,
+        photo=url,
+        title=form['title'],
+        story=form['story']
+    )
+
+    newPost.post_user = current_user
+    db.session.add(newPost)
+    db.session.commit()
+    return newPost.to_dict()
+    # else:
+    #     return form.errors
 
 
 @post_routes.route('/update-post/<int:id>', methods=['POST'])
 def updatePost(id):
     # form['csrf_token'].data = request.cookies['csrf_token']
-    print(id)
     post = Post.query.filter(Post.id == id).first()
     if request.method == 'POST':
         data = request.get_json()

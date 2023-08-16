@@ -29,30 +29,54 @@ function CreatePost() {
         setValidationErrors(errors);
     }, [story, title])
     let newPost = {}
-    if (!Object.values(errors).length) {
-        newPost = {
-            "owner_id": userId,
-            "photo": photo,
-            "title": title,
-            "story": story,
-        }
-    }
+    // if (!Object.values(errors).length) {
+    //     newPost = {
+    //         "owner_id": userId,
+    //         "photo": photo,
+    //         "title": title,
+    //         "story": story,
+    //     }
+    // }
+
     
     const history = useHistory();
     const updatePhoto = (e) => setPhoto(e.target.value);
     const updateTitle = (e) => setTitle(e.target.value);
     const updateStory = (e) => setStory(e.target.value);
-    function onSubmit(e) {
-        
+    async function onSubmit (e) {
+
         setValidationErrors(errors);
         e.preventDefault();
+
+        const formData = new FormData()
+
+        formData.append("owner_id", userId)
+        formData.append("photo", photo)
+        formData.append("title", title)
+        formData.append("story", story)
+
+        const refun = await dispatch(addPost(formData))
         
-        if (!Object.values(errors).length) {
-            setRun('yes')
-        } else {
-            setRun('no')
+        if(refun){
+            setPhoto(null)
+            setTitle("")
+            setStory("")
+
+            history.push('/')
         }
+            
     }
+    // function onSubmit(e) {
+        
+    //     setValidationErrors(errors);
+    //     e.preventDefault();
+        
+    //     if (!Object.values(errors).length) {
+    //         setRun('yes')
+    //     } else {
+    //         setRun('no')
+    //     }
+    // }
     
     const submitNo = () => {
         history.push('/')
@@ -80,11 +104,16 @@ function CreatePost() {
                     <button onClick={submitNo} className="cancel-btn" type="delNo">Cancel</button>
                 </div>
                 <div className="form-text-areas">
-                    <textarea 
+                    {/* <textarea 
                         value={photo} 
                         onChange={updatePhoto} 
                         placeholder="Add photo url here (jpg)" 
                         className="simple-style photo-text-submit" 
+                    /> */}
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => setPhoto(e.target.files[0])}
                     />
                     <textarea
                         type="text"
