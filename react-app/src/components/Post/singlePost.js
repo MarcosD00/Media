@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, NavLink, Redirect } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import { singlePost } from "../../store/posts";
 import PostDate from "../PostDate";
 import OpenModalButton from "../OpenModalButton";

@@ -48,7 +48,7 @@ export const singlePost = (postId) => async dispatch => {
 }
 
 export const addPost = (post) => async dispatch => {
-    console.log(post)
+    // console.log(post)
     const res = await fetch("/api/post/new-post", {
         method: "POST",
         body: post

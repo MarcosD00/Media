@@ -7,7 +7,8 @@ import SingleUserPost from "./components/Post/singlePost"
 import LandingPage from "./components/LandingPage"
 import PostComponent from "./components/Post";
 import Navigation from "./components/Navigation";
-import AllComments from "./components/Comment"
+import AllComments from "./components/Comment";
+import AboutMe from "./components/AboutMe";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -27,28 +28,31 @@ function App() {
 	}
 
   return (
-    <div className={pageBackgroundColor}>
+    <>
       <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
+        {isLoaded && (
+          <Switch>
           <Route exact path="/landing">
-            <LandingPage />
-          </Route>
-          <Route exact path="/">
-            <PostComponent />
-          </ Route>
-          <Route exact path="/new-post">
-            <CreatePost />
-          </Route>
-          <Route exact path="/post/:postId">
-            <SingleUserPost />
-          </Route>
-          <Route exact path="/comment/post/:postId">
-            <AllComments />
-          </Route>
-        </Switch>
-      )}
-    </div>
+            <div className={pageBackgroundColor}>
+              <LandingPage />
+            </div>
+            <AboutMe />
+            </Route>
+            <Route exact path="/">
+              <PostComponent />
+            </ Route>
+            <Route exact path="/new-post">
+              <CreatePost />
+            </Route>
+            <Route exact path="/post/:postId">
+              <SingleUserPost />
+            </Route>
+            <Route exact path="/comment/post/:postId">
+              <AllComments />
+            </Route>
+          </Switch>
+        )}
+    </>
   );
 }
 
