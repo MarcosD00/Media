@@ -1,0 +1,98 @@
+.about-me-section{
+    display: flex;
+    justify-content: space-evenly;
+    
+    margin: 3rem;
+}
+    .about-me-content{
+        font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem;
+        
+        max-width: 25rem;
+        
+        align-items: center;
+        padding: 2rem;
+
+        border: solid rgb(151, 151, 151) 0.1rem;
+        border-radius: 2%;
+        box-shadow: 0 0 50px 1px rgb(215, 215, 215);
+    }
+
+    .aboutme-photo{
+        transition: all 0.7s;
+
+        border-radius: 50%;
+        border: solid 0.1rem gray;
+
+        width: 15rem;
+    }
+
+    .aboutme-photo:hover{
+        transition: all 0.7s;
+
+        width: 15.5rem;
+    }
+
+    .links {
+        margin: 0.5rem;
+
+        text-decoration: none;
+
+        color:white;
+        background-color: black;
+
+        padding: 0.2rem 0.8rem;
+
+        border: solid black 0.1rem;
+        border-radius: 15px;
+
+        transition: all 0.7s;
+    }
+
+    .links:hover{
+        background-color: black;
+        color:#FFC017;
+
+        border: solid #FFC017 0.1rem;
+
+        transition: all 0.7s;
+    }
+
+    .project-img{
+        width: 20rem;
+
+        border-radius: 5%;
+
+        transition: all 0.7s;
+    }
+
+    .project-img:hover{
+        width: 20.5rem;
+        
+        border-radius: 5%;
+
+        transition: all 0.7s;
+    }
+
+    .skills-container{
+        margin: auto;
+    }
+
+    .skill-img{
+        width: 5rem;
+
+        border-radius: 50%;
+
+        transition: all 0.7s;
+    }
+
+    .skill-img:hover{
+        width: 5.5rem;
+
+        border-radius: 50%;
+
+        transition: all 0.7s;
+    }
