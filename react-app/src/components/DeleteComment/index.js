@@ -20,7 +20,7 @@ function DeleteComment({ comment, postId }) {
 
     
     const commentId = comment;
-    console.log(commentId)
+    // console.log(commentId)
 
     const handleSubmit = (e) => {
         e.preventDefault()

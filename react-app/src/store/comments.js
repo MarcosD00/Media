@@ -87,7 +87,7 @@ export const fetchUpdateComment = (updatedCommentForm, commentId) => async (disp
     });
     if (res.ok) {
         const comments = await res.json();
-        console.log(comments)
+        // console.log(comments)
         dispatch(updateComment(comments));
         return comments;
     }

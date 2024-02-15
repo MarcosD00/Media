@@ -48,7 +48,7 @@ def newComment(id):
         form = CommentForm()
         form['csrf_token'].data = request.cookies['csrf_token']
         data = form.data
-        print('data', data)
+        # print('data', data)
         if form.validate_on_submit():
             newComment = Comment(
                 comment=data['comment'],
