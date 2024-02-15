@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom'
 import {useModal} from "../../context/Modal"
 import { fetchUpdateComment } from "../../store/comments";
-import AllComments from "../Comment"
-import { fetchAddComment } from '../../store/comments';
 import "./updateComment.css"
 
 function UpdateComment({ id, postId }) {
