@@ -1,11 +1,4 @@
-.main-post-page{
-    display: flex;
-    justify-content: center;
-    
-    margin-top: 100px;
 
-    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
 
 .single-container{
     max-width: 680px;
