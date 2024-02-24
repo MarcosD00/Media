@@ -33,7 +33,7 @@ function AboutMe () {
                 <p>Passionate developer shaping the digital landscape, merging creativity and code on this medium clone platform.</p>
                 <div className="links-container">
                     <a className="links" href="https://marcosd00.github.io/">Portfolio</a>
-                    <a className="links" href="https://www.linkedin.com/in/marcos-d-del-valle-46a590239/">Link-In</a>
+                    <a className="links" href="https://www.linkedin.com/in/marcos-d-del-valle-46a590239/">LinkIn</a>
                 </div>
             </div>    
             <div className="about-me-content">
