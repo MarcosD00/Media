@@ -25,7 +25,7 @@ function AboutMe () {
             </div>
 
             <div className="about-me-content">
-                <h2>Learn A Bit About Me</h2>
+                <h2>Learn about me</h2>
                 <a href="https://marcosd00.github.io/">
                     <img className="aboutme-photo" src="../../profilepic.jpg"></img>
                 </a>
