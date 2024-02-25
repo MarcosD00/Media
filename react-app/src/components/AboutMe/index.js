@@ -41,7 +41,7 @@ function AboutMe () {
                 <a href="https://kora-group-project.onrender.com/login">
                     <img className="project-img" src="../../kora-page.jpg"></img>
                 </a>
-                <p>At this location, you will discover additional information pertaining to both my background and ongoing projects. Furthermore, the repository for the project is conveniently provided below</p>
+                <p>At this location, you will discover additional information of my background and ongoing projects. Furthermore, the repository for the project is conveniently provided below</p>
                 <div className="links-container">
                     <a className="links" href="https://github.com/MarcosD00/Media">Project Repo</a>
                     <a className="links" href="https://github.com/MarcosD00">Github</a>
