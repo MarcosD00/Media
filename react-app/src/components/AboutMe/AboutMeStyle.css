@@ -49,8 +49,8 @@
         border: solid black 0.1rem;
         border-radius: 15px;
 
-        transition: all 0.7s;
     }
+    /* transition: all 0.7s; */
 
     .links:hover{
         background-color: black;
