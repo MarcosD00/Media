@@ -27,7 +27,7 @@ function AuthPage() {
       <div className="auth-main">
         <div className="auth-container">
           <div className="auth-container-section sign-up-form-container">
-            {/* <SignupFormPage /> */}
+            <SignupFormPage />
             <DemoUser
               itemText="Log in as Demo User"
             />
