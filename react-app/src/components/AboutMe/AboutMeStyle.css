@@ -68,14 +68,14 @@
 
         transition: all 0.7s;
     }
-
+/* 
     .project-img:hover{
         width: 20.5rem;
         
         border-radius: 5%;
 
         transition: all 0.7s;
-    }
+    } */
 
     .skills-container{
         margin: auto;
