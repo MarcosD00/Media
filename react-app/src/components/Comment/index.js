@@ -15,8 +15,6 @@ function AllComments({ postId, newComment }) {
     const dispatch = useDispatch();
     const history = useHistory();
 
-
-    //if not logged in, redirect to home
     let sessionUser;
     sessionUser = useSelector((state) => state.session.user);
     if (!sessionUser) history.push(`/`);
