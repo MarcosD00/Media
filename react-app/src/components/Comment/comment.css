@@ -98,4 +98,13 @@
     
         transition: all 0.7s;
     }
+
+    .submit-comment-btn:hover{
+        color: rgb(194, 194, 194);
+        background-color: #0a5308;
+    
+        cursor: pointer;
+    
+        transition: all 0.7s;
+    }
 }
