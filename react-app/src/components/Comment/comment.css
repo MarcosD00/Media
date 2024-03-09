@@ -90,9 +90,5 @@
 }
 
 @media screen and (max-width: 360px) {
-    
-    .comment-btn-container{
-        display: flex;
-        flex-direction: row;
-    }
+
 }
