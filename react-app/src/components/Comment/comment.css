@@ -107,4 +107,12 @@
     
         transition: all 0.7s;
     }
+
+
+    .comment-submit-text{
+        width: 380px;
+        height: 100px;
+    
+        border: none;
+    }
 }
