@@ -90,4 +90,13 @@
 }
 
 @media screen and (max-width: 360px) {
+    .comment-cancel-btn:hover{
+        color: white;
+        background-color: #0a5308;
+    
+        cursor: pointer;
+    
+        transition: all 0.7s;
+    }
+
 }
