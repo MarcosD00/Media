@@ -89,5 +89,6 @@
     flex-direction: row;
 }
 
+/* Smart phone desing starts here */
 @media screen and (max-width: 360px) {
 }
