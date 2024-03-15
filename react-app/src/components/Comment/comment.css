@@ -94,17 +94,5 @@
         display: flex;
         flex-direction: row;
     }
-
-    .comment-cancel-btn{
-        padding: 5px 15px;
-        margin-right: 5px;
-    
-        border-radius: 15px;
-        border: 1px solid #1a8917;
-    
-        color: #1a8917;
-    
-        transition: all 0.7s;
-    }
     
 }
