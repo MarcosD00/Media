@@ -93,19 +93,4 @@
 @media screen   and (min-device-width: 375px) 
 and (max-device-width: 812px) 
 {
-    .submit-comment-btn{
-        margin: 13px 25px 13px 270px;
-        padding: 5px 18px;
-    
-    
-        border: none;
-        border-radius: 20px;
-    
-        color: white;
-        background-color: #1a8917;
-    
-        transition: all 0.7s;
-    }
-    
-
 }
