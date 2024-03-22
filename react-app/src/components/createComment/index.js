@@ -55,8 +55,6 @@ function CreateComment({ postId }) {
     const submitNo=()=>{
         closeModal()
     }
-    //w
-
     return (
         <>
                 {validationErrors.comment && <p className="title-error">{validationErrors.comment}</p>}
