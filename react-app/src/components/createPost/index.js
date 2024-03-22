@@ -4,7 +4,6 @@ import { useHistory, Redirect } from "react-router-dom";
 import "./createPost.css";
 
 import { addPost } from "../../store/posts";
-  //some comment to push to git
 function CreatePost() {
     const dispatch = useDispatch();
 
@@ -29,14 +28,6 @@ function CreatePost() {
         setValidationErrors(errors);
     }, [story, title])
     let newPost = {}
-    // if (!Object.values(errors).length) {
-    //     newPost = {
-    //         "owner_id": userId,
-    //         "photo": photo,
-    //         "title": title,
-    //         "story": story,
-    //     }
-    // }
 
     
     const history = useHistory();
