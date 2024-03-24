@@ -13,7 +13,6 @@ function CreatePost() {
     const [validationErrors, setValidationErrors] = useState({});
     const [run, setRun] = useState("no")
 
-    const sessionUser = useSelector((state) => state.session.user);
     const userId = useSelector(state => state.session.user.id);
     
 
