@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useModal } from "../../context/Modal";
 import "./deleteComment.css";
 import { useHistory } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import { fetchDeleteComment, fetchLoadCommentByUser } from "../../store/comments";
 
 
