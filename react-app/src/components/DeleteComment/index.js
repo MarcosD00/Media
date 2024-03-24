@@ -11,7 +11,6 @@ import { fetchDeleteComment, fetchLoadCommentByUser } from "../../store/comments
 function DeleteComment({ comment, postId }) {
     const { closeModal } = useModal();
     const dispatch = useDispatch();
-    const history = useHistory()
 
     const userId = useSelector(state => state.session.user.id)
 
