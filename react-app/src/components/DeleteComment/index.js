@@ -14,13 +14,10 @@ function DeleteComment({ comment, postId }) {
     const dispatch = useDispatch();
     const history = useHistory()
 
-    // let postId = useParams().postId;
-
     const userId = useSelector(state => state.session.user.id)
 
     
     const commentId = comment;
-    // console.log(commentId)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -28,7 +25,6 @@ function DeleteComment({ comment, postId }) {
         dispatch(fetchDeleteComment(commentId))
             .then(dispatch(fetchLoadCommentByUser(userId)))
             .then(dispatch(fetchLoadCommentByUser(userId)))
-            // .then(history.push(`/post/${postId}`))
             .then(closeModal())
     }
 
