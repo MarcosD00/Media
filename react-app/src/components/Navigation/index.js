@@ -11,7 +11,6 @@ import './Navigation.css';
 function Navigation({ isLoaded }){
 	const sessionUser = useSelector(state => state.session.user);
 	const location = useLocation()
-	const history = useHistory();
 
 	let navBarclass
 	if(location.pathname === "/landing"){
