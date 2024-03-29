@@ -17,7 +17,6 @@ function SignupFormModal() {
 	const [validation, setVavidation] = useState([])
 	const [errors, setErrors] = useState({});
 	const { closeModal } = useModal();
-	const [submitted, setSubmitted] = useState(false)
 	let err = {}
 
 			if (!email.trim()) err['email'] = 'email is required';
