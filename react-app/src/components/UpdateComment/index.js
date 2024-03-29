@@ -5,7 +5,7 @@ import {useModal} from "../../context/Modal"
 import { fetchUpdateComment } from "../../store/comments";
 import "./updateComment.css"
 
-function UpdateComment({ id, postId }) {
+function UpdateComment({ id }) {
     const { closeModal } = useModal();
     const history = useHistory();
 
