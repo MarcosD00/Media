@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch, useLocation } from "react-router-dom";
-import AuthPage from "./components/AuthPage";
 import CreatePost from "./components/createPost";
 import SingleUserPost from "./components/Post/singlePost"
 import LandingPage from "./components/LandingPage"
