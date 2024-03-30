@@ -19,7 +19,6 @@ function AllComments({ postId, newComment }) {
     if (!sessionUser) history.push(`/`);
 
     const comment = useSelector(state => state.comments ? state.comments.tempState : null);
-    const post = useSelector(state => state.posts ? state.posts[postId] : null)
     
     let userId;
 
