@@ -11,7 +11,6 @@ import OpenModalButton from "../OpenModalButton";
 import './comment.css';
 
 function AllComments({ postId, newComment }) {
-    const { closeModal } = useModal();
     const dispatch = useDispatch();
     const history = useHistory();
 
