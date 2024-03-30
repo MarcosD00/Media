@@ -20,7 +20,6 @@ function AllComments({ postId, newComment }) {
 
     const comment = useSelector(state => state.comments ? state.comments.tempState : null);
     
-    let userId;
 
     if (sessionUser) {
         userId = sessionUser.id
