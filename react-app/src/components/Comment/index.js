@@ -4,7 +4,6 @@ import PostDate from '../PostDate';
 import { useHistory } from "react-router-dom";
 import { fetchLoadCommentByPost } from '../../store/comments';
 import { allPosts } from '../../store/posts';
-import {useModal} from "../../context/Modal"
 import DeleteComment from '../DeleteComment';
 import UpdateComment from '../UpdateComment';
 import OpenModalButton from "../OpenModalButton";
