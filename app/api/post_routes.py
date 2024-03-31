@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from app.models import db, Post, Comment
+from app.models import db, Post
 from app.forms.form import PostForm
 from flask_login import login_required, current_user
 from sqlalchemy import func
