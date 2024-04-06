@@ -86,7 +86,7 @@ export const postUpdate = (id, post) => async dispatch => {
     }
 }
 
-// const LOAD_POST = "posts/LOAD_POST";
+
 // const ADD_POST = "posts/ADD_QUESTION";
 // const UPDATE_POST = "posts/UPDATE_POST";
 // const REMOVE_POST = "posts/REMOVE_POST";
