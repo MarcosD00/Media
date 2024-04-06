@@ -6,8 +6,6 @@ import "./Landing.css"
 
 function LandingPage () {
 
-
-
     return (
         <>
             <div className="landing-page-top-section">

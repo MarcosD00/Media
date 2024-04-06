@@ -15,8 +15,6 @@ export default function DeletePost({id}){
         history.push('/')
     };
 
-
-
     const submitNo=()=>{
         closeModal()
     }
