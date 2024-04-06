@@ -85,9 +85,6 @@ export const postUpdate = (id, post) => async dispatch => {
         return res
     }
 }
-
-
-// const ADD_POST = "posts/ADD_QUESTION";
 // const UPDATE_POST = "posts/UPDATE_POST";
 // const REMOVE_POST = "posts/REMOVE_POST";
 const initialState = {
