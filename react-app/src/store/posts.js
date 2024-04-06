@@ -85,7 +85,7 @@ export const postUpdate = (id, post) => async dispatch => {
         return res
     }
 }
-// const REMOVE_POST = "posts/REMOVE_POST";
+
 const initialState = {
     allPosts: {},
     singlePost: {},
