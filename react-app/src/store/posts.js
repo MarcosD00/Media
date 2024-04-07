@@ -134,5 +134,4 @@ const initialState = {
     }
   };
   
-
 export default postReducer
