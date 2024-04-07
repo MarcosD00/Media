@@ -19,7 +19,6 @@ function AllComments({ postId, newComment }) {
 
     const comment = useSelector(state => state.comments ? state.comments.tempState : null);
     
-
     if (sessionUser) {
         userId = sessionUser.id
     }
@@ -70,7 +69,6 @@ function AllComments({ postId, newComment }) {
             )}
         </div>
     )
-
 }
 
 export default AllComments;
