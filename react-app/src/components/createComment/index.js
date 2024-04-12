@@ -30,7 +30,6 @@ function CreateComment({ postId }) {
 
     const dispatch = useDispatch()
 
-    
     const onSubmit = async (e) => {
         e.preventDefault();
         
