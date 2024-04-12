@@ -60,7 +60,6 @@ function Navigation({ isLoaded }){
 					<NavLink exact to="/new-post" className="new-post-btn"> Write</NavLink> )
 					: null }
 					
-	
 					{isLoaded && (
 						<ProfileButton className="profile-btn" user={sessionUser} />
 					)}
