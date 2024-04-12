@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function PostDate ({ date }) {
     const parsedDate = new Date(date);
     const month = parsedDate.getMonth();
