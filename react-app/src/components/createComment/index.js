@@ -32,7 +32,6 @@ function CreateComment({ postId }) {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        
 
         let newComment = {}
         if (!Object.values(errors).length) {
