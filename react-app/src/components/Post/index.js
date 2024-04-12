@@ -8,7 +8,6 @@ import OpenModalButton from "../OpenModalButton";
 import UpdatePost from "../UpdatePost"
 import "./post.css"
 
-
 const PostComponent = () => {
     const posts = useSelector(state => Object.values(state.posts.allPosts))
     const user = useSelector(state => state.session.user)
