@@ -118,7 +118,6 @@ function SignupFormModal() {
 					onClick={handleSubmit}
 					className="login-submit" 
 					// disabled={Object.values(errors).length > 0 || email.length < 4 || !email.includes('@')}
-					// id={Object.values(errors).length > 0 ? 'sign-up-disabled' : 'sign-up-active'}
 				>Sign Up</button>
 				</div>
 				<div className="no-account-container">
