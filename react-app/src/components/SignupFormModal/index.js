@@ -56,8 +56,6 @@ function SignupFormModal() {
 		<div className='signup-modal-container'>
 			<h2 className="auth-title">Join Media</h2>
 			<div className="signup-form">
-				{/* {submitted && errors.length ? <h3 className="signup-error-title">Please complete each field as requested</h3> : null}
-				{submitted && errors.map((error, index) => <p className="signup-error" key={index}>{error}</p>)} */}
 				{validation.length > 0 && validation.map((error, index) => <p className="signup-error" key={index}>{error}</p>)}
 				<label>Email</label>
 				{errors.email && <p className="error">{errors.email}</p>}
