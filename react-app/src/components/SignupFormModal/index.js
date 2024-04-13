@@ -46,7 +46,6 @@ function SignupFormModal() {
 				window.location.href = '/'
 				closeModal()
 			}
-			
 		}
 	};
 
