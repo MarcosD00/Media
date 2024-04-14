@@ -57,7 +57,6 @@ function UpdatePost({ id }) {
         } else {
             setRun("no")
         }
-
     }
 
     const submitNo = () => {
@@ -113,7 +112,7 @@ function UpdatePost({ id }) {
             </form>
         </div>
     )
-
+    
 }
 
 export default UpdatePost;
