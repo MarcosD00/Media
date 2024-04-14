@@ -112,7 +112,6 @@ function UpdatePost({ id }) {
             </form>
         </div>
     )
-    
 }
 
 export default UpdatePost;
