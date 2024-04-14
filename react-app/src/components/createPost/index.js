@@ -82,12 +82,6 @@ function CreatePost() {
                     <button onClick={submitNo} className="cancel-btn" type="delNo">Cancel</button>
                 </div>
                 <div className="form-text-areas">
-                    {/* <textarea 
-                        value={photo} 
-                        onChange={updatePhoto} 
-                        placeholder="Add photo url here (jpg)" 
-                        className="simple-style photo-text-submit" 
-                    /> */}
                     <input
                         type="file"
                         accept="image/*"
