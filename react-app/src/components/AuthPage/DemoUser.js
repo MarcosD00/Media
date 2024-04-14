@@ -8,6 +8,7 @@ const DemoUser = () => {
   const dispatch = useDispatch();
   const history = useHistory()
   const { closeModal } = useModal();
+  
   const onClick = () => {
     dispatch(sessionActions.login("demo@aa.io", "password"))
     history.push('/')
