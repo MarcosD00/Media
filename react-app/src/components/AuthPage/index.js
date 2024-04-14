@@ -5,7 +5,6 @@ import SignupFormPage from "../SignupFormPage";
 import DemoUser from "./DemoUser";
 import "./authPage.css"
 
-
 function AuthPage() {
   const location = useLocation();
 
