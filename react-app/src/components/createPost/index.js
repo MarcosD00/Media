@@ -55,17 +55,6 @@ function CreatePost() {
         }
             
     }
-    // function onSubmit(e) {
-        
-    //     setValidationErrors(errors);
-    //     e.preventDefault();
-        
-    //     if (!Object.values(errors).length) {
-    //         setRun('yes')
-    //     } else {
-    //         setRun('no')
-    //     }
-    // }
     
     const submitNo = () => {
         history.push('/')
