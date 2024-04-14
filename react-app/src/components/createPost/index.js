@@ -14,7 +14,6 @@ function CreatePost() {
     const [run, setRun] = useState("no")
 
     const userId = useSelector(state => state.session.user.id);
-    
 
     const errors = {}
     
