@@ -49,7 +49,6 @@ function UpdateComment({ id }) {
 
         if (createdComment) {
             closeModal()
-            // history.push(`/post/${postId}`);
         }
     }
 
