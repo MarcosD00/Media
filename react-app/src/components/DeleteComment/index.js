@@ -8,7 +8,6 @@ function DeleteComment({ comment, postId }) {
     const dispatch = useDispatch();
 
     const userId = useSelector(state => state.session.user.id)
-
     
     const commentId = comment;
 
