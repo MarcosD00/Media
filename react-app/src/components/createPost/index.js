@@ -27,7 +27,6 @@ function CreatePost() {
     }, [story, title])
     let newPost = {}
 
-    
     const history = useHistory();
     const updatePhoto = (e) => setPhoto(e.target.value);
     const updateTitle = (e) => setTitle(e.target.value);
