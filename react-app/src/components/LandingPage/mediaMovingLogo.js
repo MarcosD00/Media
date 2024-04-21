@@ -13,7 +13,6 @@ function MediaMovingLogo () {
     useEffect(() => {
         const allGs = graphListEl.current.childNodes;
 
-    
         setInterval(() => {
             const match = allGs[getRandomBetween(0, allGs.length)];
         
