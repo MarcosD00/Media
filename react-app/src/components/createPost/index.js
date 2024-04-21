@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import "./createPost.css";
 
 import { addPost } from "../../store/posts";
+
 function CreatePost() {
     const dispatch = useDispatch();
 
