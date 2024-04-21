@@ -57,7 +57,6 @@ const PostComponent = () => {
                             modalProps={{hAlign: "center", className: "modal-create-comment", id: "modal-background"}}
                                 />}
                             />}
-                    
                         </div>
                     </div>
                 )}
