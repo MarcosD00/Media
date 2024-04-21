@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import "./createPost.css";
-
 import { addPost } from "../../store/posts";
 
 function CreatePost() {
