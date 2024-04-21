@@ -52,7 +52,6 @@ function CreatePost() {
 
             history.push('/')
         }
-            
     }
     
     const submitNo = () => {
