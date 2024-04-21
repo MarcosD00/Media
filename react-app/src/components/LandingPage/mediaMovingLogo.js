@@ -5,7 +5,6 @@ import "./mediaMovingLogoStyle.css"
 function MediaMovingLogo () {
     const graphListEl = useRef(null);
 
-
     const getRandomBetween = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1) + min);
     };
