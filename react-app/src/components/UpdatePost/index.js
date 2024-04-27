@@ -89,26 +89,25 @@ function UpdatePost({ id }) {
                     <button onClick={submitNo} className="cancel-btn" type="delNo">Cancel</button>
                 </div>
                 <div className="form-text-areas">
-                <textarea 
-                value={photo} 
-                onChange={updatePhoto} 
-                placeholder="Update your photo here"
-                className="simple-style photo-text-submit" >
-                </textarea>
-                <textarea 
-                value={title} 
-                onChange={updateTitle} 
-                placeholder="Update your title here"
-                className="simple-style title-text-submit" >
-                </textarea>
-                <textarea 
-                value={story} 
-                onChange={updateStory} 
-                placeholder="Update your story here"
-                className="simple-style story-text-submit update-text" >
-                </textarea>
+                    <textarea 
+                    value={photo} 
+                    onChange={updatePhoto} 
+                    placeholder="Update your photo here"
+                    className="simple-style photo-text-submit" >
+                    </textarea>
+                    <textarea 
+                    value={title} 
+                    onChange={updateTitle} 
+                    placeholder="Update your title here"
+                    className="simple-style title-text-submit" >
+                    </textarea>
+                    <textarea 
+                    value={story} 
+                    onChange={updateStory} 
+                    placeholder="Update your story here"
+                    className="simple-style story-text-submit update-text" >
+                    </textarea>
                 </div>
-
             </form>
         </div>
     )
