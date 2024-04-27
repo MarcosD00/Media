@@ -17,7 +17,7 @@ function SignupFormModal() {
 	const [validation, setVavidation] = useState([])
 	const [errors, setErrors] = useState({});
 	const { closeModal } = useModal();
-	
+
 	let err = {}
 
 			if (!email.trim()) err['email'] = 'email is required';
@@ -51,6 +51,7 @@ function SignupFormModal() {
 	};
 
 	let mustBeValid
+
 		if (!email.includes('@')) mustBeValid = "- *Your email must contain a '@' to be valid*"
 
 	return (
