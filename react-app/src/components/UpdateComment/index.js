@@ -16,8 +16,6 @@ function UpdateComment({ id }) {
     const sessionUser = useSelector((state) => state.session.user);
     if (!sessionUser) history.push(`/`);
 
-    const user_id = useSelector(state => state.session.user.id);
-
     const [comment, setComment] = useState(comments[0].comment);
     const [validationErrors, setValidationErrors] = useState({});
     const [hasSubmitted, setHasSubmitted] = useState(false);
