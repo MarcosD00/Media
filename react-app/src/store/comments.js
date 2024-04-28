@@ -100,9 +100,6 @@ export const fetchDeleteComment = (commentId) => async (dispatch) => {
     if (response.ok) {
         dispatch(deleteComment(commentId))
     }
-}
-// const UPDATE_COMMENTS = "comments/UPDATE_COMMENTS"
-// const DELETE_COMMENTS = "comments/DELETE_COMMENTS"
 
 const initialState = {};
 
