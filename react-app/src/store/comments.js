@@ -102,8 +102,6 @@ export const fetchDeleteComment = (commentId) => async (dispatch) => {
     }
 }
 
-// const LOAD_COMMENTS = "comments/LOAD_COMMENTS"
-// const LOAD_COMMENTS_BY_POST = "comments/LOAD_COMMENTS_BY_POST"
 // const LOAD_COMMENTS_BY_USER = "comments/LOAD_COMMENTS_BY_USER"
 // const ADD_COMMENT = "comments/ADD_COMMENT"
 // const UPDATE_COMMENTS = "comments/UPDATE_COMMENTS"
