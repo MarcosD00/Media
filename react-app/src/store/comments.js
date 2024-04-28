@@ -113,7 +113,6 @@ export default function commentReducer(state = initialState, action) {
             const tempState = action.comments || []
             return { ...state, tempState }
 
-
         case LOAD_COMMENTS_BY_USER:
             const newState = action.comments || []
             action.comments.forEach(ele => newState[ele.id] = ele);
