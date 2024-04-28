@@ -7,7 +7,6 @@ import { useModal } from "../../context/Modal";
 
 function UpdatePost({ id }) {
     const { closeModal } = useModal();
-    
     const dispatch = useDispatch();
 
     const post = useSelector(state => state.posts.allPosts[id])
