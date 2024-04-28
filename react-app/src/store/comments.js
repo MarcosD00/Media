@@ -100,6 +100,7 @@ export const fetchDeleteComment = (commentId) => async (dispatch) => {
     if (response.ok) {
         dispatch(deleteComment(commentId))
     }
+}
 
 const initialState = {};
 
@@ -121,7 +122,6 @@ export default function commentReducer(state = initialState, action) {
         case ADD_COMMENT:
             return { ...state, [action.comments.id]: action.comments }
 
-
         case UPDATE_COMMENTS:
             return { ...state, [action.comments.id]: action.comments };
 
@@ -129,7 +129,6 @@ export default function commentReducer(state = initialState, action) {
             const stateN = { ...state.newState }
             delete stateN[action.comments]
             return { ...state }
-
 
         default: return state;
     }
