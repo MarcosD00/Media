@@ -107,7 +107,6 @@ export default function commentReducer(state = initialState, action) {
     switch (action.type) {
         case LOAD_COMMENTS:
             const allComments = action.comments || []
-            // action.comments.forEach(ele => allComments[ele.id] = ele);
             return { ...state, allComments }
 
         case LOAD_COMMENTS_BY_POST:
