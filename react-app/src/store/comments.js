@@ -101,9 +101,6 @@ export const fetchDeleteComment = (commentId) => async (dispatch) => {
         dispatch(deleteComment(commentId))
     }
 }
-
-// const LOAD_COMMENTS_BY_USER = "comments/LOAD_COMMENTS_BY_USER"
-// const ADD_COMMENT = "comments/ADD_COMMENT"
 // const UPDATE_COMMENTS = "comments/UPDATE_COMMENTS"
 // const DELETE_COMMENTS = "comments/DELETE_COMMENTS"
 
