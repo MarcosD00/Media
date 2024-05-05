@@ -65,7 +65,7 @@ function UpdatePost({ id }) {
     useEffect(() => {
         if (Object.values(newPost).length && run === "yes") {
             const refun = async () => {
-                const res = await dispatch(postUpdate(id, newPost))
+                // const res = await dispatch(postUpdate(id, newPost))
                 closeModal()
                 history.push(`/`)
             }
