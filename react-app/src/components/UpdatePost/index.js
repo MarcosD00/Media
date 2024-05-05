@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
 import "./updatePost.css"
 import { useModal } from "../../context/Modal";
