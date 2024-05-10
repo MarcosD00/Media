@@ -3,18 +3,13 @@
 }
 
 .nav-bar {
-  /* margin: 15px auto; */
-  /* padding-bottom: 30px; */
-
   border-bottom: solid 1px rgb(242,242,242) ;
 
   font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .landing-nav-bar {
-  /* margin: 15px auto; */
   padding-top: 20px;
-  /* padding-bottom: 40px; */
 
   background-color: #FFC017;
 
@@ -32,7 +27,6 @@
 }
 
 .landing-write-btn{
-
   text-decoration: none;
 
   color: #000;
@@ -53,7 +47,6 @@
   font-weight: 500;
   font-size: 35px;
 
-  /* margin-bottom: 150px; */
   color: black;
 
   text-decoration: none;
