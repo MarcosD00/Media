@@ -59,16 +59,13 @@
   font-weight: 500;
   font-size: 35px;
 
-  /* margin-bottom: 150px; */
   color: black;
 
   text-decoration: none;
 }
 
 .home-img-btn-container{
-
   display: inline;
-  /* align-items: center; */
 }
 
 .sign-in-btn{
