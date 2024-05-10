@@ -6,8 +6,6 @@
 .form-text-areas{
     display: flex;
     flex-direction: column;
-    /* width: 700px;
-    margin: 5px; */
 }
 
 .simple-style{
