@@ -5,7 +5,6 @@
 
 .comment-container{
     max-width: 380px;
-
     padding: 25px;
 
     overflow-wrap: break-word;
@@ -79,7 +78,6 @@
     background-color: #0a5308;
 
     cursor: pointer;
-
     transition: all 0.7s;
 }
 
