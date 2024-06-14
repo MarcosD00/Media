@@ -100,13 +100,12 @@
 }
 
 .story-description {
-    word-break: break-word;
-
     max-height: 57px;
 
     color: rgb(117,117,117);
 
     overflow: hidden;
+    word-break: break-word;
 }
 
 .single-post-title {
