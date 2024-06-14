@@ -28,7 +28,6 @@ function CreatePost() {
     let newPost = {}
 
     const history = useHistory();
-    const updatePhoto = (e) => setPhoto(e.target.value);
     const updateTitle = (e) => setTitle(e.target.value);
     const updateStory = (e) => setStory(e.target.value);
     async function onSubmit (e) {
