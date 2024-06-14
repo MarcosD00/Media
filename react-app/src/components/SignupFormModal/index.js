@@ -19,7 +19,6 @@ function SignupFormModal() {
 	const { closeModal } = useModal();
 
 	let err = {}
-
 			if (!email.trim()) err['email'] = 'email is required';
 			if (!email.includes('@')) err['email'] = 'valid email is required'
 			if (!username.trim() || username.trim().length < 4) err['username'] = 'Username is required and must be at least 4 characters';
