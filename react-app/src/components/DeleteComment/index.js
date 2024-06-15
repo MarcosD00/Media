@@ -34,7 +34,6 @@ function DeleteComment({ comment}) {
             </div>
         </div>
     )
-
 }
 
 export default DeleteComment;
