@@ -21,7 +21,6 @@ function AboutMe () {
                         <img className="skill-img" src="https://myaaprojects.s3.us-east-2.amazonaws.com/postgress-circle.png" alt=""></img>
                     </div>
                 </div>
-                
             </div>
 
             <div className="about-me-content">
