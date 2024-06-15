@@ -98,7 +98,6 @@ function CreatePost() {
                         className="simple-style story-text-submit" 
                     />
                 </div>
-
             </form>
         </div>
     )
