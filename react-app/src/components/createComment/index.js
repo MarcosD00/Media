@@ -68,7 +68,6 @@ function CreateComment({ postId }) {
 
                 </form >
             </div>
-
             <AllComments postId={postId} newComment={createdComment} />
         </>
     )
