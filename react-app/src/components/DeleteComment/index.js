@@ -3,7 +3,7 @@ import { useModal } from "../../context/Modal";
 import "./deleteComment.css";
 import { fetchDeleteComment, fetchLoadCommentByUser } from "../../store/comments";
 
-function DeleteComment({ comment, postId }) {
+function DeleteComment({ comment}) {
     const { closeModal } = useModal();
     const dispatch = useDispatch();
 
