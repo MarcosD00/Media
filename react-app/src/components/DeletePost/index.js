@@ -21,7 +21,6 @@ export default function DeletePost({id}){
     
     return(
             <div className="delete-container">
-
                 <h3 className="delete-text">Confirm You Want To Delete</h3>
                 <p className="delete-text">*This post will be deleted*</p>
                 <div>
