@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./mediaMovingLogoStyle.css"
 
-
 function MediaMovingLogo () {
     const graphListEl = useRef(null);
 
