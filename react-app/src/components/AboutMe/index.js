@@ -6,6 +6,7 @@ function AboutMe () {
     return (
         <div className="about-me-section">
             <div className="about-me-content">
+                
                 <h2>Skills Used</h2>
                 <div className="skills-container">
                     <div className="skill-section">
@@ -14,7 +15,7 @@ function AboutMe () {
                         <img className="skill-img" src="https://myaaprojects.s3.us-east-2.amazonaws.com/js.png" alt=""></img>
                         <img className="skill-img" src="https://myaaprojects.s3.us-east-2.amazonaws.com/flask.png" alt=""></img>
                     </div>
-                    
+
                     <div className="skill-section">
                         <img className="skill-img" src="https://myaaprojects.s3.us-east-2.amazonaws.com/react.png" alt=""></img>
                         <img className="skill-img" src="https://myaaprojects.s3.us-east-2.amazonaws.com/redux.png" alt=""></img>
