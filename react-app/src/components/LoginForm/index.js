@@ -31,7 +31,6 @@ function LoginFormPage() {
       }
     };
 
-    
     return (
     <div className="login-form-container">
       <h2 className="auth-title">Welcome back.</h2>
