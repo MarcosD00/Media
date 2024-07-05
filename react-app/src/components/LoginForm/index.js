@@ -30,6 +30,7 @@ function LoginFormPage() {
         )
       }
     };
+
     
     return (
     <div className="login-form-container">
